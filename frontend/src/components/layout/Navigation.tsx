@@ -2,12 +2,14 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface HeaderProps {
   activeTab?: string;
 }
 
 export function Header({ activeTab }: HeaderProps) {
+  const router = useRouter();
   const currentTab = activeTab || '';
 
   const isTabActive = (tab: string) => {
@@ -19,6 +21,16 @@ export function Header({ activeTab }: HeaderProps) {
     if (tab === 'vehicles') return currentTab === 'vehicles' || currentTab === 'cars';
     if (tab === 'matrimonial') return currentTab === 'matrimonial' || currentTab === 'marriage';
     return false;
+  };
+
+  const handlePostAdClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const token = typeof window !== 'undefined' ? localStorage.getItem('placex_token') : null;
+    if (!token) {
+      router.push('/login?redirect=/post');
+    } else {
+      router.push('/post');
+    }
   };
 
   return (
@@ -48,9 +60,13 @@ export function Header({ activeTab }: HeaderProps) {
         <Link className="user-btn" href="/login" aria-label="Account">
           <i className="fa-regular fa-user"></i>
         </Link>
-        <Link className={`post-btn ${currentTab === 'post' ? 'active' : ''}`} href="/post">
+        <a 
+          href="/post" 
+          onClick={handlePostAdClick} 
+          className={`post-btn ${currentTab === 'post' ? 'active' : ''}`}
+        >
           + Post Free Ad
-        </Link>
+        </a>
         <button className="menu-square" aria-label="More">
           <i className="fa-solid fa-bars"></i>
         </button>
@@ -60,6 +76,18 @@ export function Header({ activeTab }: HeaderProps) {
 }
 
 export function CommunitySection() {
+  const router = useRouter();
+
+  const handlePostAdClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const token = typeof window !== 'undefined' ? localStorage.getItem('placex_token') : null;
+    if (!token) {
+      router.push('/login?redirect=/post');
+    } else {
+      router.push('/post');
+    }
+  };
+
   return (
     <section className="community">
       <div className="community-inner container">
@@ -76,9 +104,9 @@ export function CommunitySection() {
         <Link href="/register" className="community-primary">
           Create an Account <span>→</span>
         </Link>
-        <Link href="/post" className="community-secondary">
+        <a href="/post" onClick={handlePostAdClick} className="community-secondary">
           Post a Free Ad
-        </Link>
+        </a>
         <div className="trust-item">
           <i className="fa-solid fa-bolt"></i>
           <span>

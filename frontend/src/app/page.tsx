@@ -65,9 +65,21 @@ export default function HomePage() {
             <Link className="user-btn" href="/login" aria-label="Account">
               <i className="fa-regular fa-user"></i>
             </Link>
-            <Link className="post-btn" href="/post">
+            <a 
+              className="post-btn" 
+              href="/post"
+              onClick={(e) => {
+                e.preventDefault();
+                const token = typeof window !== 'undefined' ? localStorage.getItem('placex_token') : null;
+                if (!token) {
+                  router.push('/login?redirect=/post');
+                } else {
+                  router.push('/post');
+                }
+              }}
+            >
               + Post Free Ad
-            </Link>
+            </a>
             <button className="menu-square" aria-label="More">
               <i className="fa-solid fa-bars"></i>
             </button>

@@ -7,6 +7,17 @@ import { Header, CommunitySection, Footer } from '@/components/layout/Navigation
 
 export default function PostAdPage() {
   const router = useRouter();
+  const [checkingAuth, setCheckingAuth] = useState(true);
+
+  React.useEffect(() => {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('placex_token') : null;
+    if (!token) {
+      router.push('/login?redirect=/post');
+    } else {
+      setCheckingAuth(false);
+    }
+  }, [router]);
+
   const [category, setCategory] = useState<'jobs' | 'property' | 'classifieds' | 'vehicles' | 'matrimonial'>('classifieds');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -42,6 +53,18 @@ export default function PostAdPage() {
       }, 1500);
     }, 800);
   };
+
+  if (checkingAuth) {
+    return (
+      <>
+        <Header activeTab="post" />
+        <main className="inner-main container" style={{ padding: '100px 0', textAlign: 'center' }}>
+          <p style={{ color: '#64748b', fontSize: '15px' }}>Checking sign-in status...</p>
+        </main>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>

@@ -27,7 +27,9 @@ export default function LoginPage() {
       if (res.success && res.data.token) {
         localStorage.setItem('placex_token', res.data.token);
         localStorage.setItem('placex_user', JSON.stringify(res.data.user));
-        router.push('/');
+        const params = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+        const redirectUrl = params?.get('redirect') || '/';
+        router.push(redirectUrl);
       } else {
         setError(res.message || 'Login failed. Please check your credentials.');
       }
