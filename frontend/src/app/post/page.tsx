@@ -45,7 +45,7 @@ export default function PostAdPage() {
 
   return (
     <>
-      <Header />
+      <Header activeTab="post" />
 
       <section className="inner-hero">
         <div className="container">

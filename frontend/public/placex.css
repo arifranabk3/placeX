@@ -493,7 +493,8 @@ body{font-size:14px;-webkit-font-smoothing:antialiased}
 
 
 /* Inner-page header: full-bleed background with a centered 1280px content rail */
-.inner-site-header.site-header{
+.inner-site-header.site-header,
+header.site-header:not(.hero-wrap header) {
   width:100%!important;
   max-width:none!important;
   margin:0!important;

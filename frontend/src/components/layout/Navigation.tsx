@@ -8,9 +8,10 @@ interface HeaderProps {
 }
 
 export function Header({ activeTab }: HeaderProps) {
-  const currentTab = activeTab || 'home';
+  const currentTab = activeTab || '';
 
   const isTabActive = (tab: string) => {
+    if (!currentTab) return false;
     if (tab === 'home') return currentTab === 'home';
     if (tab === 'jobs') return currentTab === 'jobs';
     if (tab === 'property') return currentTab === 'property';
@@ -20,10 +21,8 @@ export function Header({ activeTab }: HeaderProps) {
     return false;
   };
 
-  const isHome = currentTab === 'home';
-
   return (
-    <header className={`site-header container ${!isHome ? 'inner-site-header' : ''}`}>
+    <header className="site-header inner-site-header">
       <Link className="brand" href="/">
         <span>
           Place<span className="brand-x">X</span>
@@ -49,7 +48,7 @@ export function Header({ activeTab }: HeaderProps) {
         <Link className="user-btn" href="/login" aria-label="Account">
           <i className="fa-regular fa-user"></i>
         </Link>
-        <Link className="post-btn" href="/post">
+        <Link className={`post-btn ${currentTab === 'post' ? 'active' : ''}`} href="/post">
           + Post Free Ad
         </Link>
         <button className="menu-square" aria-label="More">

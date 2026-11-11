@@ -44,7 +44,7 @@ export default function LoginPage() {
 
   return (
     <>
-      <Header />
+      <Header activeTab="login" />
 
       <section className="inner-hero">
         <div className="container">

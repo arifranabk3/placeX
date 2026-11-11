@@ -59,7 +59,7 @@ export default function RegisterPage() {
 
   return (
     <>
-      <Header />
+      <Header activeTab="register" />
 
       <section className="inner-hero">
         <div className="container">
