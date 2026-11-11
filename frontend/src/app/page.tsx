@@ -1,8 +1,41 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function HomePage() {
+  const router = useRouter();
+  const [activeTab, setActiveTab] = useState<'vehicles' | 'property' | 'jobs' | 'classifieds' | 'matrimonial'>('vehicles');
+  const [keyword, setKeyword] = useState('');
+  const [city, setCity] = useState('');
+  const [categoryType, setCategoryType] = useState('');
+
+  const tabPlaceholders: Record<string, string> = {
+    vehicles: 'Make, model, or car keywords (e.g. Corolla, Civic, Sportage)...',
+    property: 'House, apartment, plot, or society (e.g. DHA, Bahria, Gulberg)...',
+    jobs: 'Job title, skills, or company (e.g. Laravel Developer, Marketing)...',
+    classifieds: 'Search mobiles, laptops, electronics, or furniture...',
+    matrimonial: 'Profession, community, or age (e.g. Doctor, Engineer, 27)...',
+  };
+
+  const tabTypeOptions: Record<string, string[]> = {
+    vehicles: ['All Vehicle Types', 'Sedan', 'SUV / Crossover', 'Hatchback', 'Motorbike', 'Commercial Vehicle'],
+    property: ['All Property Types', 'Houses & Villas', 'Apartments & Flats', 'Plots & Land', 'Commercial & Offices'],
+    jobs: ['All Job Types', 'Full Time', 'Part Time', 'Remote / Work From Home', 'Contract', 'Internship'],
+    classifieds: ['All Categories', 'Mobile Phones & Tablets', 'Computers & Laptops', 'Electronics & Appliances', 'Home & Furniture', 'Fashion & Beauty'],
+    matrimonial: ['All Profiles', 'Bride (Female Profiles)', 'Groom (Male Profiles)'],
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const params = new URLSearchParams();
+    if (keyword.trim()) params.set('q', keyword.trim());
+    if (city && city !== 'All Cities') params.set('city', city);
+    const queryString = params.toString();
+    router.push(`/${activeTab}${queryString ? `?${queryString}` : ''}`);
+  };
   return (
     <>
       <div className="hero-wrap">
@@ -60,63 +93,116 @@ export default function HomePage() {
             </div>
 
             <div className="search-panel">
+              {/* Category Filter Pills */}
               <div className="search-tabs">
-                <button className="search-tab selected" data-tab="vehicles">
-                  <i className="fa-solid fa-car"></i> Car
+                <button
+                  type="button"
+                  className={`search-tab ${activeTab === 'vehicles' ? 'selected' : ''}`}
+                  onClick={() => { setActiveTab('vehicles'); setCategoryType(''); }}
+                >
+                  <i className="fa-solid fa-car"></i> Vehicles
                 </button>
-                <button className="search-tab" data-tab="property">
+                <button
+                  type="button"
+                  className={`search-tab ${activeTab === 'property' ? 'selected' : ''}`}
+                  onClick={() => { setActiveTab('property'); setCategoryType(''); }}
+                >
                   <i className="fa-solid fa-house"></i> Property
                 </button>
-                <button className="search-tab" data-tab="matrimonial">
-                  <i className="fa-solid fa-heart"></i> Marriage
+                <button
+                  type="button"
+                  className={`search-tab ${activeTab === 'jobs' ? 'selected' : ''}`}
+                  onClick={() => { setActiveTab('jobs'); setCategoryType(''); }}
+                >
+                  <i className="fa-solid fa-briefcase"></i> Jobs
                 </button>
-                <button className="search-tab" data-tab="classifieds">
-                  <i className="fa-solid fa-border-all"></i> Classified
+                <button
+                  type="button"
+                  className={`search-tab ${activeTab === 'classifieds' ? 'selected' : ''}`}
+                  onClick={() => { setActiveTab('classifieds'); setCategoryType(''); }}
+                >
+                  <i className="fa-solid fa-border-all"></i> Classifieds
                 </button>
-                <button className="search-tab" data-tab="jobs">
-                  <i className="fa-solid fa-briefcase"></i> Job Search
+                <button
+                  type="button"
+                  className={`search-tab ${activeTab === 'matrimonial' ? 'selected' : ''}`}
+                  onClick={() => { setActiveTab('matrimonial'); setCategoryType(''); }}
+                >
+                  <i className="fa-solid fa-heart"></i> Matrimonial
                 </button>
               </div>
-              <form className="search-fields">
-                <label className="search-input">
-                  <i className="fa-solid fa-magnifying-glass"></i>
+
+              {/* Unified Cohesive Search Bar */}
+              <form className="search-bar" onSubmit={handleSearch}>
+                {/* Field 1: Keyword */}
+                <div className="search-field field-keyword">
+                  <i className="fa-solid fa-magnifying-glass field-icon"></i>
                   <input
                     type="search"
-                    placeholder="Make, model or keyword"
+                    placeholder={tabPlaceholders[activeTab]}
+                    value={keyword}
+                    onChange={(e) => setKeyword(e.target.value)}
                     aria-label="Search keyword"
                   />
-                </label>
-                <label className="search-input">
-                  <i className="fa-solid fa-location-dot"></i>
-                  <select aria-label="Select city">
+                </div>
+
+                {/* Vertical Divider */}
+                <div className="search-divider"></div>
+
+                {/* Field 2: Location */}
+                <div className="search-field field-location">
+                  <i className="fa-solid fa-location-dot field-icon location-icon"></i>
+                  <select
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    aria-label="Select city"
+                  >
                     <option value="">Select City</option>
-                    <option>Islamabad</option>
-                    <option>Rawalpindi</option>
-                    <option>Lahore</option>
-                    <option>Karachi</option>
+                    <option value="Islamabad">Islamabad</option>
+                    <option value="Rawalpindi">Rawalpindi</option>
+                    <option value="Lahore">Lahore</option>
+                    <option value="Karachi">Karachi</option>
+                    <option value="Peshawar">Peshawar</option>
+                    <option value="Multan">Multan</option>
+                    <option value="Faisalabad">Faisalabad</option>
                   </select>
-                </label>
-                <label className="search-input">
-                  <i className="fa-solid fa-grip"></i>
-                  <select aria-label="Select category">
-                    <option>All Vehicle Types</option>
-                    <option>Sedan</option>
-                    <option>SUV</option>
-                    <option>Hatchback</option>
+                </div>
+
+                {/* Vertical Divider */}
+                <div className="search-divider"></div>
+
+                {/* Field 3: Sub-Category / Type */}
+                <div className="search-field field-type">
+                  <i className="fa-solid fa-layer-group field-icon"></i>
+                  <select
+                    value={categoryType}
+                    onChange={(e) => setCategoryType(e.target.value)}
+                    aria-label="Select category"
+                  >
+                    {tabTypeOptions[activeTab]?.map((opt, idx) => (
+                      <option key={idx} value={idx === 0 ? '' : opt}>
+                        {opt}
+                      </option>
+                    ))}
                   </select>
-                </label>
-                <button className="search-submit" type="submit">
-                  <i className="fa-solid fa-magnifying-glass"></i> Search
+                </div>
+
+                {/* Search Button */}
+                <button className="search-btn" type="submit">
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                  <span>Search</span>
                 </button>
               </form>
+
+              {/* Trending Searches */}
               <div className="trending">
                 <b>Trending:</b>
                 <Link href="/vehicles">Used Cars</Link>
                 <Link href="/property">House for Sale</Link>
                 <Link href="/property">House for Rent</Link>
                 <Link href="/jobs">Jobs Near Me</Link>
-                <Link href="/classifieds">Electronics</Link>
                 <Link href="/classifieds">Mobiles</Link>
+                <Link href="/classifieds">Laptops</Link>
                 <Link href="/classifieds">Furniture</Link>
                 <a className="view-more" href="#categories">
                   View More →
