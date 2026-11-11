@@ -784,3 +784,325 @@ body{font-size:14px;-webkit-font-smoothing:antialiased}
 .section-heading {
   margin-bottom: 18px !important;
 }
+
+/* ==========================================================================
+   ROZEE.PK STYLE JOB SEARCH FILTER SIDEBAR & ACTIVE TAGS
+   ========================================================================== */
+.rozee-filter-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  padding: 0 !important;
+}
+.rozee-filter-panel::-webkit-scrollbar {
+  width: 5px;
+}
+.rozee-filter-panel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.rozee-filter-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+.rozee-filter-head h3 {
+  font-size: 15px !important;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rozee-filter-head h3 i {
+  color: #f97316;
+  font-size: 13px;
+}
+.rozee-clear-btn {
+  background: transparent;
+  border: 0;
+  color: #f97316;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+.rozee-clear-btn:hover {
+  background: #fff7ed;
+  text-decoration: underline;
+}
+.rozee-search-box {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.rozee-search-input-wrap {
+  position: relative;
+}
+.rozee-search-input-wrap i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 13px;
+}
+.rozee-search-input-wrap input {
+  width: 100%;
+  height: 38px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0 12px 0 34px;
+  font-size: 13px;
+  color: #1e293b;
+  outline: none;
+  transition: all 0.2s ease;
+  background: #ffffff;
+}
+.rozee-search-input-wrap input:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+.rozee-filter-group {
+  border-bottom: 1px solid #f1f5f9;
+  padding: 0;
+}
+.rozee-filter-group:last-of-type {
+  border-bottom: none;
+}
+.rozee-filter-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+.rozee-filter-toggle:hover {
+  background: #f8fafc;
+}
+.rozee-filter-toggle i {
+  font-size: 11px;
+  color: #94a3b8;
+  transition: transform 0.25s ease;
+}
+.rozee-filter-toggle[aria-expanded="false"] i {
+  transform: rotate(-90deg);
+}
+.rozee-filter-content {
+  padding: 0 18px 14px;
+}
+.rozee-filter-content.is-collapsed {
+  display: none;
+}
+.rozee-checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #e2e8f0 transparent;
+}
+.rozee-checkbox-list::-webkit-scrollbar {
+  width: 4px;
+}
+.rozee-checkbox-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.rozee-checkbox-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 5px 8px;
+  border-radius: 6px;
+  margin: 0 !important;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  user-select: none;
+}
+.rozee-checkbox-item:hover {
+  background: #f8fafc;
+}
+.rozee-item-left {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: #334155;
+  font-weight: 500;
+}
+.rozee-item-left input[type="checkbox"],
+.rozee-item-left input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #f97316;
+  cursor: pointer;
+}
+.rozee-item-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 7px;
+  border-radius: 12px;
+}
+.rozee-salary-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.rozee-salary-chip {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.rozee-salary-chip:hover,
+.rozee-salary-chip.active {
+  background: #fff7ed;
+  border-color: #f97316;
+  color: #ea580c;
+}
+.rozee-range-inputs {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+}
+.rozee-range-inputs input {
+  width: 100%;
+  height: 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0 8px;
+  font-size: 12px;
+  color: #1e293b;
+  outline: none;
+}
+.rozee-range-inputs input:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.1);
+}
+.rozee-range-inputs span {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+.rozee-filter-actions {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 8px;
+  padding: 14px 18px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+.rozee-filter-actions button {
+  height: 38px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+.rozee-reset-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+}
+.rozee-reset-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+.rozee-apply-btn {
+  background: #f97316;
+  border: 1px solid #ea580c;
+  color: #ffffff;
+}
+.rozee-apply-btn:hover {
+  background: #ea580c;
+}
+
+/* Active Filter Badges Strip */
+.rozee-active-pills-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+.rozee-active-pills-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  margin-right: 4px;
+}
+.rozee-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: #c2410c;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.rozee-filter-pill button {
+  background: transparent;
+  border: 0;
+  color: #ea580c;
+  cursor: pointer;
+  padding: 0;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+.rozee-filter-pill button:hover {
+  color: #9a3412;
+}
+
+@media (max-width: 820px) {
+  .rozee-filter-panel {
+    position: static;
+    max-height: none;
+    margin-bottom: 24px;
+  }
+}
