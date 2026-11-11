@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PlaceX — Jobs, Property, Classifieds, Vehicles and Matrimonial listings in one place.">
+  <title>PlaceX — Jobs, Property, Classifieds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="hero-wrap">
+    <header class="site-header container">
+      <a class="brand" href="#"><span>Place<span class="brand-x">X</span></span><small>JOBS · PROPERTY · CLASSIFIEDS</small></a>
+      <button class="mobile-menu" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      <nav class="main-nav">
+        <a class="active" href="#">Home</a><a href="pages/jobs.html">Jobs</a><a href="pages/property.html">Property</a>
+        <a href="pages/classifieds.html">Classifieds</a><a href="pages/vehicles.html">Vehicle</a><a href="pages/matrimonial.html">Matrimonial</a>
+        <a href="#categories">Categories</a><a href="#">Blog</a><a href="#">About</a><a href="#">Contact</a>
+      </nav>
+      <div class="header-actions"><button class="user-btn" aria-label="Account"><i class="fa-regular fa-user"></i></button><a class="post-btn" href="#">+ Post Free Ad</a><button class="menu-square" aria-label="More"><i class="fa-solid fa-bars"></i></button></div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <span class="eyebrow">ONE PLATFORM. MORE POSSIBILITIES.</span>
+          <h1>Jobs. Property. Classifieds.<br><em>All in One Place.</em></h1>
+          <p>Discover real opportunities, verified listings and amazing deals<br class="desktop-only"> in your city and across the world.</p>
+          <div class="vertical-words">Live<br>Work<br>Buy<br>Sell<br>Explore <span>↗</span></div>
+        </div>
+
+        <div class="search-panel">
+          <div class="search-tabs">
+            <button class="search-tab selected" data-tab="vehicles"><i class="fa-solid fa-car"></i> Car</button>
+            <button class="search-tab" data-tab="property"><i class="fa-solid fa-house"></i> Property</button>
+            <button class="search-tab" data-tab="matrimonial"><i class="fa-solid fa-heart"></i> Marriage</button>
+            <button class="search-tab" data-tab="classifieds"><i class="fa-solid fa-border-all"></i> Classified</button>
+            <button class="search-tab" data-tab="jobs"><i class="fa-solid fa-briefcase"></i> Job Search</button>
+          </div>
+          <form class="search-fields">
+            <label class="search-input"><i class="fa-solid fa-magnifying-glass"></i><input type="search" placeholder="Make, model or keyword" aria-label="Search keyword"></label>
+            <label class="search-input"><i class="fa-solid fa-location-dot"></i><select aria-label="Select city"><option value="">Select City</option><option>Islamabad</option><option>Rawalpindi</option><option>Lahore</option><option>Karachi</option></select></label>
+            <label class="search-input"><i class="fa-solid fa-grip"></i><select aria-label="Select category"><option>All Vehicle Types</option><option>Sedan</option><option>SUV</option><option>Hatchback</option></select></label>
+            <button class="search-submit" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+          </form>
+          <div class="trending"><b>Trending:</b><a href="pages/vehicles.html">Used Cars</a><a href="pages/property.html">House for Sale</a><a href="pages/property.html">House for Rent</a><a href="pages/jobs.html">Jobs Near Me</a><a href="pages/classifieds.html">Electronics</a><a href="pages/classifieds.html">Mobiles</a><a href="pages/classifieds.html">Furniture</a><a class="view-more" href="#categories">View More →</a></div>
+        </div>
+
+        <div class="stats">
+          <div><span class="stat-icon orange"><i class="fa-solid fa-layer-group"></i></span><strong>300K+</strong><small>Active Listings</small></div>
+          <div><span class="stat-icon blue"><i class="fa-solid fa-users"></i></span><strong>300K+</strong><small>Happy Users</small></div>
+          <div><span class="stat-icon green"><i class="fa-solid fa-building"></i></span><strong>50K+</strong><small>Companies &amp; Agents</small></div>
+          <div><span class="stat-icon grey"><i class="fa-solid fa-earth-americas"></i></span><strong>100+</strong><small>Cities Worldwide</small></div>
+        </div>
+
+        <section class="category-box category-showcase" id="categories">
+          <div class="category-showcase-grid">
+            <a class="category-feature property-feature" href="pages/property.html">
+              <span class="feature-icon"><i class="fa-solid fa-house"></i></span>
+              <span class="feature-copy"><strong>Property</strong><small>Buy, sell or rent<br>properties</small></span>
+              <img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=360&q=85" alt="Modern property">
+              <span class="feature-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+            <a class="category-feature marriage-feature" href="pages/matrimonial.html">
+              <span class="feature-icon"><i class="fa-regular fa-heart"></i></span>
+              <span class="feature-copy"><strong>Matrimonial</strong><small>Find the right<br>match</small></span>
+              <img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=360&q=85" alt="Wedding rings">
+              <span class="feature-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+            <a class="category-feature vehicles-feature" href="pages/vehicles.html">
+              <span class="feature-icon"><i class="fa-solid fa-car"></i></span>
+              <span class="feature-copy"><strong>Vehicles</strong><small>Buy and sell<br>vehicles</small></span>
+              <img loading="lazy" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=360&q=85" alt="Car">
+              <span class="feature-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+            <a class="category-feature classifieds-feature" href="pages/classifieds.html">
+              <span class="feature-icon"><i class="fa-solid fa-tag"></i></span>
+              <span class="feature-copy"><strong>Classifieds</strong><small>Buy and sell<br>anything</small></span>
+              <img loading="lazy" src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=360&q=85" alt="Shopping boxes">
+              <span class="feature-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+            <a class="category-feature jobs-feature" href="pages/jobs.html">
+              <span class="feature-icon"><i class="fa-solid fa-briefcase"></i></span>
+              <span class="feature-copy"><strong>Jobs</strong><small>Find or post<br>jobs</small></span>
+              <img loading="lazy" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=360&q=85" alt="Office chair and desk">
+              <span class="feature-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <section class="promo-area">
+    <div class="promo-grid container">
+      <article class="promo-card promo-jobs"><span>CAREER &amp; OPPORTUNITY</span><h3>Find work that<br>moves you forward.</h3><p>Explore roles from companies and teams<br>hiring now.</p><a href="pages/jobs.html">Explore jobs <b>→</b></a><i class="fa-solid fa-briefcase promo-art"></i></article>
+      <article class="promo-card promo-property"><span>YOUR NEXT ADDRESS</span><h3>Make room for<br>what matters.</h3><p>Discover homes, rentals and spaces worth<br>seeing.</p><a href="pages/property.html">Explore property <b>→</b></a><i class="fa-solid fa-house-chimney promo-art"></i></article>
+      <article class="promo-card promo-classified"><span>BUY · SELL · DISCOVER</span><h3>Good finds.<br>New possibilities.</h3><p>Browse everyday essentials and standout<br>finds.</p><a href="pages/classifieds.html">Browse classifieds <b>→</b></a><i class="fa-solid fa-tag promo-art"></i></article>
+    </div>
+  </section>
+
+  <main class="listing-main container">
+    <section class="listing-section" id="jobs">
+      <div class="section-heading"><h2>Jobs</h2><a href="pages/jobs.html">View All Jobs <span>→</span></a></div>
+      <div class="listing-grid">
+        <article class="listing-card"><div class="job-logo-panel tech-nova"><div class="company-logo-mark">TN</div><div class="company-logo-name">TechNova</div><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Senior Laravel Developer</h3><p>Join our tech team to build and scale web applications.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Islamabad</span><strong>PKR 150K – 200K</strong></div></div></article>
+        <article class="listing-card"><div class="job-logo-panel pixel-craft"><div class="company-logo-mark">PC</div><div class="company-logo-name">PixelCraft</div><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>UI/UX Designer</h3><p>Design modern and user-friendly web &amp; mobile experiences.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Remote</span><strong>PKR 120K – 180K</strong></div></div></article>
+        <article class="listing-card"><div class="job-logo-panel market-edge"><div class="company-logo-mark">ME</div><div class="company-logo-name">MarketEdge</div><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Marketing Executive</h3><p>Handle campaigns, content and digital marketing.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Lahore</span><strong>PKR 80K – 120K</strong></div></div></article>
+        <article class="listing-card"><div class="job-logo-panel bright-future"><div class="company-logo-mark">BF</div><div class="company-logo-name">Bright Future</div><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Teaching Professional</h3><p>Required for a reputable school, multiple subjects.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Rawalpindi</span><strong>PKR 60K – 90K</strong></div></div></article>
+        <article class="listing-card"><div class="job-logo-panel sales-pro"><div class="company-logo-mark">SP</div><div class="company-logo-name">SalesPro</div><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Sales Executive</h3><p>Drive sales and build client relationships.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Karachi</span><strong>PKR 70K – 110K</strong></div></div></article>
+      </div>
+    </section>
+
+    <section class="listing-section" id="property">
+      <div class="section-heading"><h2>Property</h2><a href="pages/property.html">View All Property <span>→</span></a></div>
+      <div class="listing-grid">
+        <article class="listing-card"><div class="card-image"><img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=85" alt="Modern family house"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Modern Family House</h3><p>5 Marla house in Bahria Town with modern design.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Rawalpindi</span><strong>PKR 2.25 Crore</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=85" alt="Luxury apartment interior"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Luxury Apartment</h3><p>3 Beds apartment in prime location, with amenities.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Islamabad</span><strong>PKR 85K / month</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=700&q=85" alt="Green residential land"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>10 Marla Residential Plot</h3><p>Ideal plot for home construction in a developed area.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Lahore</span><strong>PKR 1.1 Crore</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=85" alt="Commercial office building"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Commercial Office</h3><p>Office space in business district with parking.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Islamabad</span><strong>PKR 3.5 Crore</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=700&q=85" alt="House for rent"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>House for Rent</h3><p>4 Marla house for rent in a peaceful society.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Rawalpindi</span><strong>PKR 45K / month</strong></div></div></article>
+      </div>
+    </section>
+
+    <section class="listing-section" id="classifieds">
+      <div class="section-heading"><h2>Classifieds</h2><a href="pages/classifieds.html">View All Classifieds <span>→</span></a></div>
+      <div class="listing-grid">
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=700&q=85" alt="Smartphone"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>iPhone 15 Pro Max</h3><p>Brand new, 256GB with box and accessories.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Islamabad</span><strong>PKR 425,000</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=85" alt="Sofa set"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Sofa Set (5 Seater)</h3><p>Stylish and comfortable sofa set in good condition.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Rawalpindi</span><strong>PKR 85,000</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=700&q=85" alt="Refrigerator"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Nova Refrigerator</h3><p>Double door refrigerator, excellent condition.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Lahore</span><strong>PKR 55,000</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85" alt="Smart watch"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Smart Watch</h3><p>Feature-rich smart watch with health tracking.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Karachi</span><strong>PKR 18,500</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=700&q=85" alt="LED television"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>LED TV 55 Inch</h3><p>4K Ultra HD LED TV with smart features.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Islamabad</span><strong>PKR 92,000</strong></div></div></article>
+      </div>
+    </section>
+
+    <section class="listing-section" id="vehicles">
+      <div class="section-heading"><h2>Vehicles</h2><a href="pages/vehicles.html">View All Vehicles <span>→</span></a></div>
+      <div class="listing-grid">
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=85" alt="Toyota Corolla"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Toyota Corolla 2023</h3><p>2023 model, low mileage and excellent condition.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Lahore</span><strong>PKR 74,50,000</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=700&q=85" alt="Honda Civic"></div><div class="card-body"><h3>Honda Civic 2021</h3><p>Clean car, single owner and well maintained.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Islamabad</span><strong>PKR 68,50,000</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=85" alt="SUV"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Kia Sportage 2023</h3><p>2023 model, full options and excellent condition.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Karachi</span><strong>PKR 89,00,000</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=85" alt="Red sports car"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Suzuki Swift 2022</h3><p>Neat and clean, fuel efficient and family used.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Rawalpindi</span><strong>PKR 42,50,000</strong></div></div></article>
+        <article class="listing-card"><div class="card-image"><img loading="lazy" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=85" alt="Honda City"><button class="favorite"><i class="fa-regular fa-heart"></i></button></div><div class="card-body"><h3>Honda City 2020</h3><p>Good condition, original paint and low mileage.</p><div class="card-meta"><span><i class="fa-solid fa-location-dot"></i> Lahore</span><strong>PKR 34,00,000</strong></div></div></article>
+      </div>
+    </section>
+
+    <section class="listing-section matrimonial-section" id="matrimonial">
+      <div class="section-heading"><h2>Matrimonial</h2><a href="#">View All Profiles <span>→</span></a></div>
+      <div class="profile-grid">
+        <article class="profile-card"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=180&q=85" alt="Profile portrait"><div><b>PX-1024</b><p>Age 27 · Islamabad<br>Masters · Professional</p><span class="bride">Bride Profile</span></div><i class="fa-regular fa-heart"></i></article>
+        <article class="profile-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=180&q=85" alt="Profile portrait"><div><b>PX-1038</b><p>Age 30 · Lahore<br>Engineer · Masters</p><span class="groom">Groom Profile</span></div><i class="fa-regular fa-heart"></i></article>
+        <article class="profile-card"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=180&q=85" alt="Profile portrait"><div><b>PX-1051</b><p>Age 26 · Rawalpindi<br>Medical · Graduate</p><span class="bride">Bride Profile</span></div><i class="fa-regular fa-heart"></i></article>
+        <article class="profile-card"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=180&q=85" alt="Profile portrait"><div><b>PX-1062</b><p>Age 32 · Karachi<br>Business · Masters</p><span class="groom">Groom Profile</span></div><i class="fa-regular fa-heart"></i></article>
+        <article class="profile-card"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=180&q=85" alt="Profile portrait"><div><b>PX-1073</b><p>Age 28 · Lahore<br>Teacher · Masters</p><span class="bride">Bride Profile</span></div><i class="fa-regular fa-heart"></i></article>
+      </div>
+    </section>
+  </main>
+
+  <section class="community">
+    <div class="community-inner container">
+      <div class="community-icon"><i class="fa-solid fa-users"></i></div><div class="community-copy"><h2>Join a Growing Community</h2><p>Create your account and start exploring thousands of jobs,<br> properties and classifieds today.</p></div>
+      <a href="#" class="community-primary">Create an Account <span>→</span></a><a href="#" class="community-secondary">Post a Free Ad</a>
+      <div class="trust-item"><i class="fa-solid fa-bolt"></i><span><b>Fast &amp; Easy</b><small>Get started in minutes</small></span></div>
+      <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><span><b>Verified Listings</b><small>Safe and trusted</small></span></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-brand"><a class="brand" href="#"><span>Place<span class="brand-x">X</span></span><small>JOBS · PROPERTY · CLASSIFIEDS</small></a><div class="socials"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></div></div>
+      <div class="footer-col"><h4>Marketplace</h4><a href="pages/jobs.html">Jobs</a><a href="pages/property.html">Property</a><a href="pages/classifieds.html">Classifieds</a><a href="pages/vehicles.html">Vehicle</a><a href="pages/matrimonial.html">Matrimonial</a><a href="#categories">All Categories</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Blog</a><a href="#">Contact Us</a><a href="#">Terms of Use</a><a href="#">Privacy Policy</a></div>
+      <div class="footer-col"><h4>Help &amp; Support</h4><a href="#">Help Center</a><a href="#">Safety Tips</a><a href="#">Community Guidelines</a><a href="#">Report a Listing</a><a href="#">FAQ</a></div>
+      <div class="newsletter"><h4>Newsletter</h4><p>Subscribe for latest updates</p><form><input type="email" placeholder="Enter your email" aria-label="Email address" required><button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button></form></div>
+    </div>
+    <div class="footer-bottom container"><span>© 2026 PlaceX. All rights reserved.</span><span><a href="#">Privacy Policy</a>　|　<a href="#">Terms of Use</a>　|　<a href="#">Sitemap</a></span></div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

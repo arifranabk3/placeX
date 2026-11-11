@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Vehicles | PlaceX</title><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="../css/style.css"></head><body><header class="site-header container inner-site-header"><a class="brand" href="../index.html"><span>Place<span class="brand-x">X</span></span><small>JOBS · PROPERTY · CLASSIFIEDS</small></a><button class="mobile-menu" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button><nav class="main-nav"><a class="" href="../index.html">Home</a><a class="" href="jobs.html">Jobs</a><a class="" href="property.html">Property</a><a class="" href="classifieds.html">Classifieds</a><a class="active" href="vehicles.html">Vehicle</a><a class="" href="matrimonial.html">Matrimonial</a><a class="" href="../index.html#categories">Categories</a><a class="" href="#">Blog</a><a class="" href="#">About</a><a class="" href="#">Contact</a></nav><div class="header-actions"><button class="user-btn" aria-label="Account"><i class="fa-regular fa-user"></i></button><a class="post-btn" href="#">+ Post Free Ad</a><button class="menu-square" aria-label="More"><i class="fa-solid fa-bars"></i></button></div></header><section class="inner-hero"><div class="container"><div class="breadcrumb"><a href="../index.html">Home</a> / Vehicles</div><h1>Find Your Next Vehicle</h1><p>Explore cars and other vehicles from private sellers and verified dealerships.</p><form class="inner-search"><input type="search" placeholder="Search vehicles..."><select><option>All Cities</option><option>Islamabad</option><option>Rawalpindi</option><option>Lahore</option><option>Karachi</option></select><button type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button></form></div></section><main class="inner-main container"><div class="inner-layout"><aside class="filter-panel vehicle-filter-panel">
+  <div class="vehicle-filter-head">
+    <div><h3><i class="fa-solid fa-sliders"></i> Refine Your Search</h3><p>Find the right car with detailed filters</p></div>
+    <button type="button" class="vehicle-reset">Reset</button>
+  </div>
+  <div class="vehicle-filter-search">
+    <label for="vehicle-keyword">Search by keyword</label>
+    <div class="vehicle-keyword-wrap"><i class="fa-solid fa-magnifying-glass"></i><input id="vehicle-keyword" type="search" placeholder="Make, model or variant"></div>
+  </div>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Location <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content">
+      <label class="vehicle-field-label" for="vehicle-city">City</label>
+      <select id="vehicle-city" class="vehicle-filter-select"><option value="">All Pakistan</option><option>Islamabad</option><option>Rawalpindi</option><option>Lahore</option><option>Karachi</option></select>
+      <label class="vehicle-field-label" for="vehicle-registration">Registered in</label>
+      <select id="vehicle-registration" class="vehicle-filter-select"><option value="">Any city</option><option>Islamabad</option><option>Rawalpindi</option><option>Lahore</option><option>Karachi</option></select>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Make &amp; Model <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content">
+      <label class="vehicle-field-label" for="vehicle-make">Make</label>
+      <select id="vehicle-make" class="vehicle-filter-select"><option value="">Any Make</option><option>Toyota</option><option>Honda</option><option>Kia</option><option>Suzuki</option><option>Hyundai</option></select>
+      <label class="vehicle-field-label" for="vehicle-model">Model</label>
+      <select id="vehicle-model" class="vehicle-filter-select"><option value="">Any Model</option><option>Corolla</option><option>Civic</option><option>Sportage</option><option>Swift</option><option>City</option><option>Tucson</option></select>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Price Range (PKR) <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content">
+      <div class="vehicle-range-row"><input id="vehicle-price-min" type="number" min="0" placeholder="Min price"><span>to</span><input id="vehicle-price-max" type="number" min="0" placeholder="Max price"></div>
+      <div class="vehicle-quick-options"><button type="button" data-price-max="3000000">Under 30 lacs</button><button type="button" data-price-min="3000000" data-price-max="6000000">30–60 lacs</button><button type="button" data-price-min="6000000">60+ lacs</button></div>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Model Year <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content">
+      <div class="vehicle-range-row"><select id="vehicle-year-min"><option value="">From year</option><option>2015</option><option>2018</option><option>2020</option><option>2022</option><option>2024</option></select><span>to</span><select id="vehicle-year-max"><option value="">To year</option><option>2018</option><option>2020</option><option>2022</option><option>2024</option><option>2026</option></select></div>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Mileage (KM) <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content">
+      <div class="vehicle-range-row"><input id="vehicle-km-min" type="number" min="0" placeholder="Min KM"><span>to</span><input id="vehicle-km-max" type="number" min="0" placeholder="Max KM"></div>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Transmission <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content vehicle-check-options">
+      <label><input type="checkbox" name="vehicle-transmission" value="Automatic"> Automatic</label>
+      <label><input type="checkbox" name="vehicle-transmission" value="Manual"> Manual</label>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Body Type <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content vehicle-check-options">
+      <label><input type="checkbox" name="vehicle-body" value="Sedan"> Sedan</label>
+      <label><input type="checkbox" name="vehicle-body" value="SUV"> SUV</label>
+      <label><input type="checkbox" name="vehicle-body" value="Hatchback"> Hatchback</label>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Fuel Type <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content vehicle-check-options">
+      <label><input type="checkbox" name="vehicle-fuel" value="Petrol"> Petrol</label>
+      <label><input type="checkbox" name="vehicle-fuel" value="Hybrid"> Hybrid</label>
+      <label><input type="checkbox" name="vehicle-fuel" value="Diesel"> Diesel</label>
+      <label><input type="checkbox" name="vehicle-fuel" value="Electric"> Electric</label>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Engine Capacity (CC) <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content">
+      <div class="vehicle-range-row"><input id="vehicle-cc-min" type="number" placeholder="Min CC"><span>to</span><input id="vehicle-cc-max" type="number" placeholder="Max CC"></div>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Assembly <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content vehicle-check-options">
+      <label><input type="checkbox" name="vehicle-assembly" value="Local"> Local</label>
+      <label><input type="checkbox" name="vehicle-assembly" value="Imported"> Imported</label>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Seller Type <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content vehicle-check-options">
+      <label><input type="checkbox" name="vehicle-seller" value="Dealer"> Dealer</label>
+      <label><input type="checkbox" name="vehicle-seller" value="Owner"> Owner</label>
+    </div>
+  </section>
+  <section class="vehicle-filter-group">
+    <button class="vehicle-filter-toggle" type="button" aria-expanded="true">Ad Properties <i class="fa-solid fa-chevron-up"></i></button>
+    <div class="vehicle-filter-content vehicle-check-options">
+      <label><input type="checkbox" name="vehicle-ad" value="verified"> Verified listings only</label>
+      <label><input type="checkbox" name="vehicle-ad" value="featured"> Featured ads only</label>
+      <label><input type="checkbox" name="vehicle-ad" value="photos"> With pictures</label>
+    </div>
+  </section>
+  <div class="vehicle-filter-actions"><button type="button" class="vehicle-reset-secondary">Reset All</button><button type="button" class="vehicle-apply">Apply Filters</button></div>
+</aside><section><div class="results-top"><div><h2>Used Cars for Sale</h2><p class="vehicle-result-count">Showing 6 sample listings</p></div><select class="sort-select vehicle-sort"><option value="newest">Sort: Newest First</option><option value="price-low">Price: Low to High</option><option value="price-high">Price: High to Low</option><option value="year">Model Year</option></select></div><div class="inner-card-grid"><article class="inner-listing-card vehicle-result" data-make="Toyota" data-model="Corolla" data-year="2023" data-city="Lahore" data-price="7450000" data-km="28000" data-transmission="Automatic" data-body="Sedan" data-fuel="Petrol" data-cc="1800" data-assembly="Local" data-seller="Dealer" data-verified="true" data-featured="true"><div class="inner-card-image"><a href="vehicles-detail.html"><img loading="lazy" src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=900&q=85" alt="Toyota Corolla 2023"></a><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="inner-card-content"><h3><a href="vehicles-detail.html">Toyota Corolla 2023</a></h3><p>2023 model, low mileage and excellent condition.</p><div class="card-tags"><span>Verified Listing</span><span>Lahore</span></div><div class="inner-card-meta"><span><i class="fa-solid fa-location-dot"></i> Lahore</span><strong>PKR 74,50,000</strong></div></div></article><article class="inner-listing-card vehicle-result" data-make="Honda" data-model="Civic" data-year="2021" data-city="Islamabad" data-price="6850000" data-km="42000" data-transmission="Automatic" data-body="Sedan" data-fuel="Petrol" data-cc="1800" data-assembly="Local" data-seller="Owner" data-verified="true" data-featured="false"><div class="inner-card-image"><a href="vehicles-detail.html"><img loading="lazy" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=85" alt="Honda Civic 2021"></a><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="inner-card-content"><h3><a href="vehicles-detail.html">Honda Civic 2021</a></h3><p>Clean car, single owner and well maintained.</p><div class="card-tags"><span>Verified Listing</span><span>Islamabad</span></div><div class="inner-card-meta"><span><i class="fa-solid fa-location-dot"></i> Islamabad</span><strong>PKR 68,50,000</strong></div></div></article><article class="inner-listing-card vehicle-result" data-make="Kia" data-model="Sportage" data-year="2023" data-city="Karachi" data-price="8900000" data-km="18000" data-transmission="Automatic" data-body="SUV" data-fuel="Petrol" data-cc="2000" data-assembly="Local" data-seller="Dealer" data-verified="true" data-featured="true"><div class="inner-card-image"><a href="vehicles-detail.html"><img loading="lazy" src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=85" alt="Kia Sportage 2023"></a><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="inner-card-content"><h3><a href="vehicles-detail.html">Kia Sportage 2023</a></h3><p>2023 model, full options and excellent condition.</p><div class="card-tags"><span>Verified Listing</span><span>Karachi</span></div><div class="inner-card-meta"><span><i class="fa-solid fa-location-dot"></i> Karachi</span><strong>PKR 89,00,000</strong></div></div></article><article class="inner-listing-card vehicle-result" data-make="Suzuki" data-model="Swift" data-year="2022" data-city="Rawalpindi" data-price="4250000" data-km="25000" data-transmission="Manual" data-body="Hatchback" data-fuel="Petrol" data-cc="1200" data-assembly="Local" data-seller="Owner" data-verified="true" data-featured="false"><div class="inner-card-image"><a href="vehicles-detail.html"><img loading="lazy" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85" alt="Suzuki Swift 2022"></a><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="inner-card-content"><h3><a href="vehicles-detail.html">Suzuki Swift 2022</a></h3><p>Neat and clean, fuel efficient and family used.</p><div class="card-tags"><span>Verified Listing</span><span>Rawalpindi</span></div><div class="inner-card-meta"><span><i class="fa-solid fa-location-dot"></i> Rawalpindi</span><strong>PKR 42,50,000</strong></div></div></article><article class="inner-listing-card vehicle-result" data-make="Honda" data-model="City" data-year="2020" data-city="Lahore" data-price="3400000" data-km="56000" data-transmission="Automatic" data-body="Sedan" data-fuel="Petrol" data-cc="1500" data-assembly="Local" data-seller="Dealer" data-verified="true" data-featured="false"><div class="inner-card-image"><a href="vehicles-detail.html"><img loading="lazy" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85" alt="Honda City 2020"></a><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="inner-card-content"><h3><a href="vehicles-detail.html">Honda City 2020</a></h3><p>Good condition, original paint and low mileage.</p><div class="card-tags"><span>Verified Listing</span><span>Lahore</span></div><div class="inner-card-meta"><span><i class="fa-solid fa-location-dot"></i> Lahore</span><strong>PKR 34,00,000</strong></div></div></article><article class="inner-listing-card vehicle-result" data-make="Hyundai" data-model="Tucson" data-year="2022" data-city="Islamabad" data-price="7600000" data-km="30000" data-transmission="Automatic" data-body="SUV" data-fuel="Petrol" data-cc="2000" data-assembly="Imported" data-seller="Dealer" data-verified="true" data-featured="true"><div class="inner-card-image"><a href="vehicles-detail.html"><img loading="lazy" src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=85" alt="Hyundai Tucson 2022"></a><button class="favorite" aria-label="Add to favourites"><i class="fa-regular fa-heart"></i></button></div><div class="inner-card-content"><h3><a href="vehicles-detail.html">Hyundai Tucson 2022</a></h3><p>Well maintained SUV with complete documents.</p><div class="card-tags"><span>Verified Listing</span><span>Islamabad</span></div><div class="inner-card-meta"><span><i class="fa-solid fa-location-dot"></i> Islamabad</span><strong>PKR 76,00,000</strong></div></div></article></div><div class="pagination"><a class="active" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">→</a></div></section></div></main><section class="community"><div class="community-inner container"><div class="community-icon"><i class="fa-solid fa-users"></i></div><div class="community-copy"><h2>Join a Growing Community</h2><p>Create your account and start exploring thousands of jobs,<br> properties and classifieds today.</p></div><a href="#" class="community-primary">Create an Account <span>→</span></a><a href="#" class="community-secondary">Post a Free Ad</a><div class="trust-item"><i class="fa-solid fa-bolt"></i><span><b>Fast &amp; Easy</b><small>Get started in minutes</small></span></div><div class="trust-item"><i class="fa-solid fa-shield-halved"></i><span><b>Verified Listings</b><small>Safe and trusted</small></span></div></div></section><footer class="site-footer"><div class="footer-inner container"><div class="footer-brand"><a class="brand" href="../index.html"><span>Place<span class="brand-x">X</span></span><small>JOBS · PROPERTY · CLASSIFIEDS</small></a><div class="socials"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a></div></div><div class="footer-col"><h4>Marketplace</h4><a href="jobs.html">Jobs</a><a href="property.html">Property</a><a href="classifieds.html">Classifieds</a><a href="vehicles.html">Vehicles</a><a href="matrimonial.html">Matrimonial</a></div><div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Blog</a><a href="#">Contact Us</a><a href="#">Terms of Use</a><a href="#">Privacy Policy</a></div><div class="footer-col"><h4>Help &amp; Support</h4><a href="#">Help Center</a><a href="#">Safety Tips</a><a href="#">Community Guidelines</a><a href="#">Report a Listing</a><a href="#">FAQ</a></div><div class="newsletter"><h4>Newsletter</h4><p>Subscribe for latest updates</p><form><input type="email" placeholder="Enter your email" aria-label="Email address" required><button type="submit"><i class="fa-solid fa-arrow-right"></i></button></form></div></div><div class="footer-bottom container"><span>© 2026 PlaceX. All rights reserved.</span><span><a href="#">Privacy Policy</a>　|　<a href="#">Terms of Use</a>　|　<a href="#">Sitemap</a></span></div></footer><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../js/script.js"></script><script src="../js/inner-pages.js"></script></body></html>
