@@ -54,6 +54,42 @@ class User extends Authenticatable
         return $this->roles->contains('slug', $slug);
     }
 
+    public function hasAnyRole(array $slugs): bool
+    {
+        return $this->roles->whereIn('slug', $slugs)->isNotEmpty();
+    }
+
+    public function isSuperAdmin(): bool
+    {
+        return $this->hasRole('super-admin');
+    }
+
+    public function isAdminStaff(): bool
+    {
+        return $this->hasAnyRole(['super-admin', 'admin', 'moderator', 'support-agent']);
+    }
+
+    public function hasPermission(string $permissionSlug): bool
+    {
+        if ($this->isSuperAdmin()) {
+            return true;
+        }
+
+        return $this->roles()->with('permissions')->get()
+            ->pluck('permissions')
+            ->flatten()
+            ->contains('slug', $permissionSlug);
+    }
+
+    public function getInitialsAttribute(): string
+    {
+        $words = explode(' ', trim($this->name));
+        if (count($words) >= 2) {
+            return strtoupper(substr($words[0], 0, 1) . substr($words[1], 0, 1));
+        }
+        return strtoupper(substr($this->name, 0, 2));
+    }
+
     public function listings()
     {
         return $this->hasMany(Listing::class);
