@@ -81,6 +81,11 @@ class User extends Authenticatable
             ->contains('slug', $permissionSlug);
     }
 
+    public function initials(): string
+    {
+        return $this->initials;
+    }
+
     public function getInitialsAttribute(): string
     {
         $words = explode(' ', trim($this->name));

@@ -29,6 +29,11 @@ class AuditLog extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function actor()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public static function log(string $action, string $entityType, ?int $entityId = null, ?array $payload = null, ?int $userId = null): self
     {
         return self::create([
@@ -36,10 +41,15 @@ class AuditLog extends Model
             'action' => $action,
             'entity_type' => $entityType,
             'entity_id' => $entityId,
-            'ip_address' => request()->ip(),
-            'user_agent' => request()->userAgent(),
+            'ip_address' => request() ? request()->ip() : '127.0.0.1',
+            'user_agent' => request() ? request()->userAgent() : 'CLI',
             'payload' => $payload,
             'created_at' => now(),
         ]);
+    }
+
+    public static function record(string $action, string $entityType, ?int $entityId = null, ?array $payload = null, ?int $userId = null): self
+    {
+        return self::log($action, $entityType, $entityId, $payload, $userId);
     }
 }
