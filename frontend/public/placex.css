@@ -50,7 +50,7 @@ button,input,select{font:inherit}
 .category-tile{height:50px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:8px;font-weight:800}
 .category-tile i{font-size:17px}
 .blue-tile{background:#edf4ff;color:#0874ef}.green-tile{background:#edf8f1;color:#07964c}.orange-tile{background:#fff3e8;color:#ff8500}.red-tile{background:#fff0f2;color:#ff3b52}.purple-tile{background:#f5edff;color:#9137e8}.grey-tile{background:#f0f2f5;color:#34465a}
-.promo-area{background:#f2f5f9;padding:18px 0 17px}
+.promo-area{background:#f2f5f9;padding:12px 0 14px;margin-top:0;}
 .promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .promo-card{min-height:160px;height:auto;border-radius:14px;padding:20px 22px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(110deg,#061a2a,#0c3548);display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box}
 .promo-property{background:linear-gradient(110deg,#071c2b,#153d48)}
@@ -1092,13 +1092,13 @@ header.site-header:not(.hero-wrap header) {
    PERFECT COMPONENT SPACING & HARMONY FOR HERO & SHOWCASE
    ========================================================================== */
 .hero-wrap {
-  padding-bottom: 50px !important;
+  padding-bottom: 24px !important;
 }
 .hero {
-  padding-top: 40px !important;
+  padding-top: 32px !important;
 }
 .hero-copy {
-  margin-bottom: 32px !important;
+  margin-bottom: 24px !important;
   min-height: auto !important;
 }
 .hero h1 {
@@ -1112,15 +1112,25 @@ header.site-header:not(.hero-wrap header) {
   color: #cbd5e1 !important;
 }
 .search-box {
-  margin-bottom: 28px !important;
+  margin-bottom: 20px !important;
 }
 
 .category-box.category-showcase {
   margin-top: 0 !important;
-  margin-bottom: -35px !important;
-  padding: 18px !important;
+  margin-bottom: 0 !important;
+  padding: 16px !important;
   border-radius: 20px !important;
-  box-shadow: 0 20px 45px -10px rgba(11, 26, 48, 0.18), 0 0 0 1px rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 16px 40px -10px rgba(11, 26, 48, 0.16), 0 0 0 1px rgba(226, 232, 240, 0.9) !important;
+}
+@media(max-width:768px){
+  .hero-wrap {
+    padding-bottom: 18px !important;
+  }
+  .category-box.category-showcase {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 12px !important;
+  }
 }
 .listing-main {
   padding-top: 70px !important;
