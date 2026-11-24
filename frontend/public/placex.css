@@ -875,11 +875,79 @@ header.site-header:not(.hero-wrap header) {
 .trending .view-more:hover {
   text-decoration: underline !important;
 }
-.stats{display:flex!important;align-items:center!important;justify-content:center!important;gap:36px!important;margin:22px auto 14px!important;max-width:920px!important;padding:10px 20px!important;background:rgba(6,20,38,0.45)!important;border-radius:30px!important;backdrop-filter:blur(8px)!important;border:1px solid rgba(255,255,255,0.06)!important;}
-.stats>div{display:flex!important;align-items:center!important;gap:10px!important;border-right:0!important;padding:0!important;}
-.stat-icon{width:34px!important;height:34px!important;border-radius:10px!important;display:grid!important;place-items:center!important;font-size:13px!important;color:#ffffff!important;}
-.stats strong{font-size:15px!important;font-weight:900!important;color:#ffffff!important;}
-.stats small{font-size:10px!important;color:#94a3b8!important;}
+/* ==========================================================================
+   PREMIUM STATS SECTION (Desktop pill / Mobile 2x2 grid)
+   ========================================================================== */
+.stats {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+  margin: 28px auto 32px !important;
+  max-width: 960px !important;
+  padding: 12px 20px !important;
+  background: rgba(6, 23, 44, 0.72) !important;
+  border-radius: 20px !important;
+  backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+.stats > div {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 8px 12px !important;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  transition: all 0.2s ease !important;
+  min-width: 0 !important;
+}
+.stats > div:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  transform: translateY(-1px) !important;
+}
+.stat-icon {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 12px !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 15px !important;
+  color: #ffffff !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18) !important;
+}
+.stat-icon.orange {
+  background: linear-gradient(135deg, #ff5a0a, #ff7b2b) !important;
+}
+.stat-icon.blue {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa) !important;
+}
+.stat-icon.green {
+  background: linear-gradient(135deg, #10b981, #34d399) !important;
+}
+.stat-icon.grey {
+  background: linear-gradient(135deg, #64748b, #94a3b8) !important;
+}
+.stats strong {
+  display: block !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+}
+.stats small {
+  display: block !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #94a3b8 !important;
+  white-space: nowrap !important;
+  margin-top: 2px !important;
+}
 @media(max-width:850px){
   .search-panel {
     padding: 16px 14px !important;
@@ -963,11 +1031,39 @@ header.site-header:not(.hero-wrap header) {
     gap: 6px !important;
   }
   .stats {
-    gap: 16px !important;
-    flex-wrap: wrap !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 12px !important;
+    border-radius: 16px !important;
+    margin: 20px auto 24px !important;
+  }
+  .stats > div {
+    padding: 10px !important;
+    border-radius: 12px !important;
+  }
+  .stat-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 14px !important;
+  }
+  .stats strong {
+    font-size: 15px !important;
+  }
+  .stats small {
+    font-size: 10px !important;
   }
 }
-@media(max-width:600px){.stats{flex-direction:column!important;gap:12px!important;border-radius:18px!important;}}
+@media(max-width:480px){
+  .stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    padding: 10px !important;
+  }
+  .stats > div {
+    gap: 8px !important;
+    padding: 8px 10px !important;
+  }
+}
 
 /* ==========================================================================
    PERFECT COMPONENT SPACING & HARMONY FOR HERO & SHOWCASE
@@ -995,19 +1091,7 @@ header.site-header:not(.hero-wrap header) {
 .search-box {
   margin-bottom: 28px !important;
 }
-.stats {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 32px !important;
-  margin: 0 auto 36px !important;
-  max-width: 860px !important;
-  padding: 12px 28px !important;
-  background: rgba(11, 26, 48, 0.65) !important;
-  border-radius: 9999px !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  backdrop-filter: blur(10px) !important;
-}
+
 .category-box.category-showcase {
   margin-top: 0 !important;
   margin-bottom: -35px !important;
