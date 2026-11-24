@@ -32,19 +32,21 @@
             </div>
 
             <!-- Welcome Action Buttons -->
-            <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 shrink-0">
+            <div class="flex flex-wrap items-center gap-3 sm:gap-3.5 shrink-0">
                 <a href="{{ route('portal-admin.listings.create') }}" 
-                   class="inline-flex items-center justify-center gap-2 px-4.5 py-2.5 rounded-xl bg-orange hover:bg-orange-hover text-white text-xs sm:text-sm font-bold shadow-lg shadow-orange/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
-                    <i class="fa-solid fa-plus text-xs"></i>
+                   class="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff5a0a] to-[#ff7324] hover:from-[#e04c04] hover:to-[#ff5a0a] text-white text-sm font-extrabold tracking-wide shadow-lg shadow-orange/35 border border-white/20 transition-all duration-200 hover:shadow-xl hover:shadow-orange/45 hover:-translate-y-0.5 active:translate-y-0 select-none whitespace-nowrap">
+                    <span class="w-5 h-5 rounded-lg bg-white/20 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
                     <span>Create Listing</span>
                 </a>
                 <a href="{{ route('portal-admin.listings.index') }}" 
-                   class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold border border-white/15 backdrop-blur-sm transition-all hover:border-white/30">
+                   class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-semibold border border-white/15 backdrop-blur-md transition-all duration-200 hover:border-white/30 hover:-translate-y-0.5 active:translate-y-0 select-none whitespace-nowrap">
                     <i class="fa-solid fa-layer-group text-xs text-orange"></i>
                     <span>Manage Listings</span>
                 </a>
                 <a href="{{ route('portal-admin.enquiries.index') }}" 
-                   class="relative p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/15 backdrop-blur-sm transition-all hover:border-white/30"
+                   class="relative p-3 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/15 backdrop-blur-md transition-all duration-200 hover:border-white/30 hover:-translate-y-0.5 active:translate-y-0"
                    title="Notifications & Enquiries">
                     <i class="fa-regular fa-bell text-sm"></i>
                     @if($newEnquiries > 0)
