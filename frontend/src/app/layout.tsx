@@ -26,6 +26,40 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         />
         <link rel="stylesheet" href="/placex.css" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const observer = new MutationObserver(function(mutations) {
+                  for (let i = 0; i < mutations.length; i++) {
+                    const mutation = mutations[i];
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'bis_skin_checked') {
+                      mutation.target.removeAttribute('bis_skin_checked');
+                    }
+                    if (mutation.addedNodes) {
+                      mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === 1) {
+                          if (node.hasAttribute('bis_skin_checked')) {
+                            node.removeAttribute('bis_skin_checked');
+                          }
+                          const children = node.querySelectorAll ? node.querySelectorAll('[bis_skin_checked]') : [];
+                          for (let j = 0; j < children.length; j++) {
+                            children[j].removeAttribute('bis_skin_checked');
+                          }
+                        }
+                      });
+                    }
+                  }
+                });
+                observer.observe(document.documentElement, {
+                  attributes: true,
+                  subtree: true,
+                  attributeFilter: ['bis_skin_checked']
+                });
+              })();
+            `,
+          }}
+        />
       </head>
       <body suppressHydrationWarning>{children}</body>
     </html>

@@ -44,7 +44,7 @@ export function Header({ activeTab }: HeaderProps) {
       <button className="mobile-menu" aria-label="Toggle navigation">
         <i className="fa-solid fa-bars"></i>
       </button>
-      <nav className="main-nav">
+      <nav className="main-nav" suppressHydrationWarning>
         <Link className={isTabActive('home') ? 'active' : ''} href="/">Home</Link>
         <Link className={isTabActive('jobs') ? 'active' : ''} href="/jobs">Jobs</Link>
         <Link className={isTabActive('property') ? 'active' : ''} href="/property">Property</Link>
@@ -56,7 +56,7 @@ export function Header({ activeTab }: HeaderProps) {
         <Link href="#">About</Link>
         <Link href="#">Contact</Link>
       </nav>
-      <div className="header-actions">
+      <div className="header-actions" suppressHydrationWarning>
         <Link className="user-btn" href="/login" aria-label="Account">
           <i className="fa-regular fa-user"></i>
         </Link>
@@ -67,9 +67,6 @@ export function Header({ activeTab }: HeaderProps) {
         >
           + Post Free Ad
         </a>
-        <button className="menu-square" aria-label="More">
-          <i className="fa-solid fa-bars"></i>
-        </button>
       </div>
     </header>
   );

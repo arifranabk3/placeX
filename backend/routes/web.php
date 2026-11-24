@@ -95,6 +95,7 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'admin.auth'])->group
     Route::middleware('admin.permission:moderation.queue')->group(function () {
         Route::get('/moderation', [ModerationController::class, 'index'])->name('moderation.index');
         Route::post('/moderation/{listing}', [ModerationController::class, 'process'])->name('moderation.process');
+        Route::post('/moderation/{listing}/verdict', [ModerationController::class, 'process'])->name('moderation.verdict');
     });
 
     // Reports & Complaints

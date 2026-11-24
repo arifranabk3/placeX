@@ -97,9 +97,12 @@ class PortalListingController extends Controller
             'price' => 'nullable|numeric|min:0',
             'currency' => 'nullable|string|max:10',
             'description' => 'required|string',
-            'listing_status' => 'required|in:draft,active,inactive,closed,archived',
+            'listing_status' => 'required|in:draft,active,inactive,closed,archived,paused',
             'moderation_status' => 'nullable|in:pending,approved,rejected',
-            'image_url' => 'nullable|url|max:500',
+            'image_url' => 'nullable|string|max:500',
+            'is_featured' => 'nullable|boolean',
+            'removed_image_ids' => 'nullable|array',
+            'removed_image_ids.*' => 'integer|exists:listing_images,id',
         ]);
 
         $this->listingService->updateListing($listing, $request->all());

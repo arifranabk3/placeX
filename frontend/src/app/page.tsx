@@ -49,7 +49,7 @@ export default function HomePage() {
           <button className="mobile-menu" aria-label="Toggle navigation">
             <i className="fa-solid fa-bars"></i>
           </button>
-          <nav className="main-nav">
+          <nav className="main-nav" suppressHydrationWarning>
             <Link className="active" href="/">Home</Link>
             <Link href="/jobs">Jobs</Link>
             <Link href="/property">Property</Link>
@@ -61,7 +61,7 @@ export default function HomePage() {
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
           </nav>
-          <div className="header-actions">
+          <div className="header-actions" suppressHydrationWarning>
             <Link className="user-btn" href="/login" aria-label="Account">
               <i className="fa-regular fa-user"></i>
             </Link>
@@ -80,9 +80,6 @@ export default function HomePage() {
             >
               + Post Free Ad
             </a>
-            <button className="menu-square" aria-label="More">
-              <i className="fa-solid fa-bars"></i>
-            </button>
           </div>
         </header>
 
@@ -751,7 +748,21 @@ export default function HomePage() {
             <p>Create your account and start exploring thousands of jobs,<br /> properties and classifieds today.</p>
           </div>
           <Link href="/register" className="community-primary">Create an Account <span>→</span></Link>
-          <Link href="/post" className="community-secondary">Post a Free Ad</Link>
+          <a 
+            href="/post" 
+            className="community-secondary"
+            onClick={(e) => {
+              e.preventDefault();
+              const token = typeof window !== 'undefined' ? localStorage.getItem('placex_token') : null;
+              if (!token) {
+                router.push('/login?redirect=/post');
+              } else {
+                router.push('/post');
+              }
+            }}
+          >
+            Post a Free Ad
+          </a>
           <div className="trust-item"><i className="fa-solid fa-bolt"></i><span><b>Fast &amp; Easy</b><small>Get started in minutes</small></span></div>
           <div className="trust-item"><i className="fa-solid fa-shield-halved"></i><span><b>Verified Listings</b><small>Safe and trusted</small></span></div>
         </div>

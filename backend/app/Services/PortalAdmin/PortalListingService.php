@@ -62,7 +62,7 @@ class PortalListingService
             if (! empty($data['image_url'])) {
                 ListingImage::create([
                     'listing_id' => $listing->id,
-                    'image_url' => $data['image_url'],
+                    'image_path' => $data['image_url'],
                     'is_primary' => true,
                     'sort_order' => 1,
                 ]);
@@ -93,16 +93,40 @@ class PortalListingService
                 'currency' => $data['currency'] ?? $listing->currency,
                 'listing_status' => $data['listing_status'] ?? $listing->listing_status,
                 'moderation_status' => $data['moderation_status'] ?? $listing->moderation_status,
+                'is_featured' => isset($data['is_featured']) ? (bool)$data['is_featured'] : $listing->is_featured,
                 'published_at' => ($data['listing_status'] ?? '') === 'active' && ! $listing->published_at ? now() : $listing->published_at,
             ]);
 
             $this->syncVerticalDetails($listing, $data, $vertical);
 
+            // 1. Safe removal of images confirmed by the user upon save
+            if (! empty($data['removed_image_ids']) && is_array($data['removed_image_ids'])) {
+                ListingImage::where('listing_id', $listing->id)
+                    ->whereIn('id', $data['removed_image_ids'])
+                    ->delete();
+            }
+
+            // 2. Add or update primary image from form input
             if (! empty($data['image_url'])) {
-                ListingImage::updateOrCreate(
-                    ['listing_id' => $listing->id, 'is_primary' => true],
-                    ['image_url' => $data['image_url'], 'sort_order' => 1]
-                );
+                $existing = ListingImage::where('listing_id', $listing->id)
+                    ->where('image_path', $data['image_url'])
+                    ->first();
+
+                if (! $existing) {
+                    ListingImage::create([
+                        'listing_id' => $listing->id,
+                        'image_path' => $data['image_url'],
+                        'is_primary' => true,
+                        'sort_order' => 1,
+                    ]);
+                }
+            }
+
+            // Re-normalize primary flag so at most one image is primary
+            $primaryImage = ListingImage::where('listing_id', $listing->id)->first();
+            if ($primaryImage) {
+                ListingImage::where('listing_id', $listing->id)->update(['is_primary' => false]);
+                $primaryImage->update(['is_primary' => true]);
             }
 
             AuditLog::record('portal.listing_updated', Listing::class, $listing->id, [
@@ -124,27 +148,49 @@ class PortalListingService
 
         // Jobs
         if (str_contains($slug, 'job') || isset($data['company_name'])) {
+            $rawEmp = str_replace('-', '_', strtolower($data['job_type'] ?? ($data['employment_type'] ?? 'full_time')));
+            $validEmp = ['full_time', 'part_time', 'contract', 'internship', 'temporary'];
+            $employmentType = in_array($rawEmp, $validEmp) ? $rawEmp : 'full_time';
+
+            $rawWork = strtolower($data['workplace_type'] ?? 'onsite');
+            $validWork = ['onsite', 'remote', 'hybrid'];
+            $workplaceType = in_array($rawWork, $validWork) ? $rawWork : 'onsite';
+
             JobDetail::updateOrCreate(
                 ['listing_id' => $listing->id],
                 [
                     'company_name' => $data['company_name'] ?? 'PlaceX Employer',
-                    'job_type' => $data['job_type'] ?? 'full-time',
+                    'employment_type' => $employmentType,
+                    'workplace_type' => $workplaceType,
                     'experience_level' => $data['experience_level'] ?? 'mid-level',
-                    'salary_min' => $data['salary_min'] ?? null,
-                    'salary_max' => $data['salary_max'] ?? null,
+                    'min_salary' => $data['salary_min'] ?? ($data['min_salary'] ?? null),
+                    'max_salary' => $data['salary_max'] ?? ($data['max_salary'] ?? null),
                 ]
             );
         }
 
         // Property
         if (str_contains($slug, 'prop') || isset($data['property_purpose'])) {
+            $rawArea = $data['area_size'] ?? '5';
+            $numericArea = (float) filter_var($rawArea, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+            if ($numericArea <= 0) {
+                $numericArea = 5.0;
+            }
+
+            $areaUnit = 'Marla';
+            if (stripos($rawArea, 'kanal') !== false) {
+                $areaUnit = 'Kanal';
+            } elseif (stripos($rawArea, 'sqft') !== false || stripos($rawArea, 'sq') !== false) {
+                $areaUnit = 'Sq. Ft.';
+            }
+
             PropertyDetail::updateOrCreate(
                 ['listing_id' => $listing->id],
                 [
-                    'property_purpose' => $data['property_purpose'] ?? 'sale',
+                    'purpose' => $data['property_purpose'] ?? ($data['purpose'] ?? 'sale'),
                     'property_type' => $data['property_type'] ?? 'house',
-                    'area_size' => $data['area_size'] ?? '5 Marla',
-                    'area_unit' => $data['area_unit'] ?? 'Marla',
+                    'area_size' => $numericArea,
+                    'area_unit' => $data['area_unit'] ?? $areaUnit,
                     'bedrooms' => $data['bedrooms'] ?? 3,
                     'bathrooms' => $data['bathrooms'] ?? 3,
                 ]
