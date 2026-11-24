@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 export default function HomePage() {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<'vehicles' | 'property' | 'jobs' | 'classifieds' | 'matrimonial'>('vehicles');
+  const [activeTab, setActiveTab] = useState<'vehicles' | 'property' | 'jobs' | 'classifieds' | 'services' | 'matrimonial'>('vehicles');
   const [keyword, setKeyword] = useState('');
   const [city, setCity] = useState('');
   const [categoryType, setCategoryType] = useState('');
@@ -19,6 +19,7 @@ export default function HomePage() {
     property: 'House, apartment, plot, or society (e.g. DHA, Bahria, Gulberg)...',
     jobs: 'Job title, skills, or company (e.g. Laravel Developer, Marketing)...',
     classifieds: 'Search mobiles, laptops, electronics, or furniture...',
+    services: 'Search home repair, AC services, cleaning, designers, or legal...',
     matrimonial: 'Profession, community, or age (e.g. Doctor, Engineer, 27)...',
   };
 
@@ -27,6 +28,7 @@ export default function HomePage() {
     property: ['All Property Types', 'Houses & Villas', 'Apartments & Flats', 'Plots & Land', 'Commercial & Offices'],
     jobs: ['All Job Types', 'Full Time', 'Part Time', 'Remote / Work From Home', 'Contract', 'Internship'],
     classifieds: ['All Categories', 'Mobile Phones & Tablets', 'Computers & Laptops', 'Electronics & Appliances', 'Home & Furniture', 'Fashion & Beauty'],
+    services: ['All Services', 'Home Maintenance', 'Design & Construction', 'Cleaning & Care', 'IT & Digital Services', 'Legal & Finance'],
     matrimonial: ['All Profiles', 'Bride (Female Profiles)', 'Groom (Male Profiles)'],
   };
 
@@ -138,6 +140,13 @@ export default function HomePage() {
                   onClick={() => { setActiveTab('classifieds'); setCategoryType(''); }}
                 >
                   <i className="fa-solid fa-border-all"></i> Classifieds
+                </button>
+                <button
+                  type="button"
+                  className={`search-tab ${activeTab === 'services' ? 'selected' : ''}`}
+                  onClick={() => { setActiveTab('services'); setCategoryType(''); }}
+                >
+                  <i className="fa-solid fa-wrench"></i> Services
                 </button>
                 <button
                   type="button"
@@ -292,6 +301,13 @@ export default function HomePage() {
                   <span className="feature-copy"><strong>Jobs</strong><small>Find or post<br />jobs</small></span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img loading="lazy" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=360&q=85" alt="Office chair and desk" />
+                  <span className="feature-arrow"><i className="fa-solid fa-arrow-right"></i></span>
+                </Link>
+                <Link className="category-feature services-feature" href="/services">
+                  <span className="feature-icon"><i className="fa-solid fa-wrench"></i></span>
+                  <span className="feature-copy"><strong>Services</strong><small>Hire expert<br />pros &amp; teams</small></span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img loading="lazy" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=360&q=85" alt="Technician and tools" />
                   <span className="feature-arrow"><i className="fa-solid fa-arrow-right"></i></span>
                 </Link>
               </div>
@@ -676,6 +692,95 @@ export default function HomePage() {
                 <div className="card-meta">
                   <span><i className="fa-solid fa-location-dot"></i> Lahore</span>
                   <strong>PKR 34,00,000</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="listing-section" id="services">
+          <div className="section-heading">
+            <h2>Services</h2>
+            <Link href="/services">View All Services <span>→</span></Link>
+          </div>
+          <div className="listing-grid">
+            <article className="listing-card">
+              <div className="card-image">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img loading="lazy" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=700&q=85" alt="Home Appliance Repair" />
+                <button className="favorite" aria-label="Add to favourites"><i className="fa-regular fa-heart"></i></button>
+              </div>
+              <div className="card-body">
+                <h3>Home Appliance Repair &amp; Maintenance</h3>
+                <p>Expert repair services for AC, Refrigerator, and Washing Machines.</p>
+                <div className="card-meta">
+                  <span><i className="fa-solid fa-location-dot"></i> Islamabad</span>
+                  <strong>PKR 1,500 / visit</strong>
+                </div>
+              </div>
+            </article>
+
+            <article className="listing-card">
+              <div className="card-image">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img loading="lazy" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=85" alt="Interior Design" />
+                <button className="favorite" aria-label="Add to favourites"><i className="fa-regular fa-heart"></i></button>
+              </div>
+              <div className="card-body">
+                <h3>Professional Interior &amp; Architecture Design</h3>
+                <p>Turnkey interior design, 3D modeling, and architectural planning.</p>
+                <div className="card-meta">
+                  <span><i className="fa-solid fa-location-dot"></i> Lahore</span>
+                  <strong>PKR 45,000 / project</strong>
+                </div>
+              </div>
+            </article>
+
+            <article className="listing-card">
+              <div className="card-image">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img loading="lazy" src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=700&q=85" alt="Cleaning services" />
+                <button className="favorite" aria-label="Add to favourites"><i className="fa-regular fa-heart"></i></button>
+              </div>
+              <div className="card-body">
+                <h3>Commercial &amp; Deep Home Cleaning</h3>
+                <p>Complete disinfection, sofa &amp; carpet shampooing, and water tank cleaning.</p>
+                <div className="card-meta">
+                  <span><i className="fa-solid fa-location-dot"></i> Karachi</span>
+                  <strong>PKR 5,000 / session</strong>
+                </div>
+              </div>
+            </article>
+
+            <article className="listing-card">
+              <div className="card-image">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img loading="lazy" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=85" alt="Web Development" />
+                <button className="favorite" aria-label="Add to favourites"><i className="fa-regular fa-heart"></i></button>
+              </div>
+              <div className="card-body">
+                <h3>Web &amp; Mobile App Development</h3>
+                <p>Full-stack software engineering, custom CMS, and mobile apps.</p>
+                <div className="card-meta">
+                  <span><i className="fa-solid fa-location-dot"></i> Rawalpindi</span>
+                  <strong>PKR 80,000 / project</strong>
+                </div>
+              </div>
+            </article>
+
+            <article className="listing-card">
+              <div className="card-image">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img loading="lazy" src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=700&q=85" alt="Solar installation" />
+                <button className="favorite" aria-label="Add to favourites"><i className="fa-regular fa-heart"></i></button>
+              </div>
+              <div className="card-body">
+                <h3>Solar System Installation &amp; Engineering</h3>
+                <p>Certified on-grid and hybrid solar power solutions with Net Metering.</p>
+                <div className="card-meta">
+                  <span><i className="fa-solid fa-location-dot"></i> Faisalabad</span>
+                  <strong>PKR 25,000 / job</strong>
                 </div>
               </div>
             </article>
