@@ -1133,13 +1133,33 @@ header.site-header:not(.hero-wrap header) {
   }
 }
 .listing-main {
-  padding-top: 70px !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
 }
 .listing-section {
-  margin-bottom: 48px !important;
+  margin-bottom: 28px !important;
 }
 .section-heading {
-  margin-bottom: 18px !important;
+  margin-bottom: 14px !important;
+}
+.community {
+  margin-top: 0 !important;
+  padding: 16px 0 !important;
+}
+@media(max-width:768px){
+  .listing-main {
+    padding-top: 18px !important;
+    padding-bottom: 16px !important;
+  }
+  .listing-section {
+    margin-bottom: 20px !important;
+  }
+  .community {
+    padding: 14px 0 !important;
+  }
+  .site-footer {
+    padding-top: 24px !important;
+  }
 }
 
 /* ==========================================================================
