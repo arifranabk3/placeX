@@ -54,6 +54,7 @@ export default function HomePage() {
             <Link href="/property">Property</Link>
             <Link href="/classifieds">Classifieds</Link>
             <Link href="/vehicles">Vehicle</Link>
+            <Link href="/services">Services</Link>
             <Link href="/matrimonial">Matrimonial</Link>
             <a href="#categories">Categories</a>
             <Link href="/blog">Blog</Link>

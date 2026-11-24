@@ -20,6 +20,7 @@ export function Header({ activeTab }: HeaderProps) {
     if (tab === 'property') return currentTab === 'property';
     if (tab === 'classifieds') return currentTab === 'classifieds';
     if (tab === 'vehicles') return currentTab === 'vehicles' || currentTab === 'cars';
+    if (tab === 'services') return currentTab === 'services';
     if (tab === 'matrimonial') return currentTab === 'matrimonial' || currentTab === 'marriage';
     return false;
   };
@@ -48,6 +49,7 @@ export function Header({ activeTab }: HeaderProps) {
         <Link className={isTabActive('property') ? 'active' : ''} href="/property">Property</Link>
         <Link className={isTabActive('classifieds') ? 'active' : ''} href="/classifieds">Classifieds</Link>
         <Link className={isTabActive('vehicles') ? 'active' : ''} href="/vehicles">Vehicle</Link>
+        <Link className={isTabActive('services') ? 'active' : ''} href="/services">Services</Link>
         <Link className={isTabActive('matrimonial') ? 'active' : ''} href="/matrimonial">Matrimonial</Link>
         <a href="/#categories">Categories</a>
         <Link href="#">Blog</Link>
@@ -152,6 +154,7 @@ export function Footer() {
           <Link href="/property">Property</Link>
           <Link href="/classifieds">Classifieds</Link>
           <Link href="/vehicles">Vehicle</Link>
+          <Link href="/services">Services</Link>
           <Link href="/matrimonial">Matrimonial</Link>
           <a href="/#categories">All Categories</a>
         </div>
