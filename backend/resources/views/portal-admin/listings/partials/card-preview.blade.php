@@ -1,5 +1,5 @@
 <!-- Reusable Listing Card Preview (Matches PlaceX Next.js .listing-card) -->
-<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition max-w-sm mx-auto">
+<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition w-full max-w-md mx-auto">
     <!-- Card Media Container -->
     <div class="relative aspect-4/3 bg-slate-100 overflow-hidden">
         <img :src="images[0] || 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=85'" 

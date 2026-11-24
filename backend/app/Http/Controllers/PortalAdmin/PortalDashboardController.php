@@ -62,6 +62,10 @@ class PortalDashboardController extends Controller
             ->take(5)
             ->get();
 
+        $mediaAssets = \App\Models\ListingImage::count();
+        $newEnquiries = ListingReport::where('status', 'pending')->count();
+        $categories = Category::whereNull('parent_id')->withCount('listings')->get();
+
         return view('portal-admin.dashboard.index', compact(
             'totalListings',
             'publishedListings',
@@ -72,7 +76,10 @@ class PortalDashboardController extends Controller
             'categoryBreakdown',
             'recentListings',
             'pendingQueue',
-            'recentReports'
+            'recentReports',
+            'mediaAssets',
+            'newEnquiries',
+            'categories'
         ));
     }
 }

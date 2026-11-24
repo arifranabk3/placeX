@@ -1,7 +1,7 @@
 @extends('portal-admin.layouts.app', ['title' => 'Post Vehicle Listing'])
 
 @section('content')
-<div class="max-w-3xl mx-auto space-y-6">
+<div class="space-y-6 w-full">
 
     <div class="flex items-center justify-between">
         <div>
