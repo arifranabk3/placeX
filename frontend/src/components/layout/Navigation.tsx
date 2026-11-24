@@ -10,6 +10,7 @@ interface HeaderProps {
 
 export function Header({ activeTab }: HeaderProps) {
   const router = useRouter();
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const currentTab = activeTab || '';
 
   const isTabActive = (tab: string) => {
@@ -41,10 +42,14 @@ export function Header({ activeTab }: HeaderProps) {
         </span>
         <small>JOBS · PROPERTY · CLASSIFIEDS</small>
       </Link>
-      <button className="mobile-menu" aria-label="Toggle navigation">
-        <i className="fa-solid fa-bars"></i>
+      <button 
+        className="mobile-menu" 
+        aria-label="Toggle navigation"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
       </button>
-      <nav className="main-nav" suppressHydrationWarning>
+      <nav className={`main-nav ${mobileMenuOpen ? 'open' : ''}`} suppressHydrationWarning>
         <Link className={isTabActive('home') ? 'active' : ''} href="/">Home</Link>
         <Link className={isTabActive('jobs') ? 'active' : ''} href="/jobs">Jobs</Link>
         <Link className={isTabActive('property') ? 'active' : ''} href="/property">Property</Link>

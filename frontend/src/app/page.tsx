@@ -12,6 +12,8 @@ export default function HomePage() {
   const [city, setCity] = useState('');
   const [categoryType, setCategoryType] = useState('');
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const tabPlaceholders: Record<string, string> = {
     vehicles: 'Make, model, or car keywords (e.g. Corolla, Civic, Sportage)...',
     property: 'House, apartment, plot, or society (e.g. DHA, Bahria, Gulberg)...',
@@ -46,10 +48,14 @@ export default function HomePage() {
             </span>
             <small>JOBS · PROPERTY · CLASSIFIEDS</small>
           </Link>
-          <button className="mobile-menu" aria-label="Toggle navigation">
-            <i className="fa-solid fa-bars"></i>
+          <button 
+            className="mobile-menu" 
+            aria-label="Toggle navigation"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
           </button>
-          <nav className="main-nav" suppressHydrationWarning>
+          <nav className={`main-nav ${mobileMenuOpen ? 'open' : ''}`} suppressHydrationWarning>
             <Link className="active" href="/">Home</Link>
             <Link href="/jobs">Jobs</Link>
             <Link href="/property">Property</Link>
