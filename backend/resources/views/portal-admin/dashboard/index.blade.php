@@ -52,105 +52,105 @@
     </div>
 
     <!-- 2. SIX KPI STATISTIC CARDS (100% Real Database Data) -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3.5 sm:gap-4 w-full">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 w-full">
         
         <!-- KPI 1: Total Listings -->
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between hover:border-slate-300 hover:shadow-md transition">
-            <div class="flex items-center justify-between text-slate-400">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Total Listings</span>
-                <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-xs">
+        <div class="bg-white p-5 rounded-2xl shadow-xs border border-slate-200/90 flex flex-col justify-between hover:border-slate-300 hover:shadow-md transition min-w-0">
+            <div class="flex items-start justify-between gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 leading-tight">Total Listings</span>
+                <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-xs shrink-0">
                     <i class="fa-solid fa-layer-group"></i>
                 </div>
             </div>
-            <div class="mt-3">
-                <span class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">{{ number_format($totalListings) }}</span>
-                <div class="flex items-center gap-1 text-[11px] text-slate-500 mt-1">
-                    <i class="fa-solid fa-database text-[10px] text-slate-400"></i>
+            <div class="mt-4">
+                <span class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight block">{{ number_format($totalListings) }}</span>
+                <div class="flex items-center gap-1.5 text-xs text-slate-500 mt-1.5 truncate">
+                    <i class="fa-solid fa-database text-[11px] text-slate-400 shrink-0"></i>
                     <span>All categories</span>
                 </div>
             </div>
         </div>
 
         <!-- KPI 2: Published Listings -->
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-emerald-200/80 flex flex-col justify-between hover:border-emerald-300 hover:shadow-md transition">
-            <div class="flex items-center justify-between text-emerald-600">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800">Published Live</span>
-                <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs">
+        <div class="bg-white p-5 rounded-2xl shadow-xs border border-emerald-200/90 flex flex-col justify-between hover:border-emerald-300 hover:shadow-md transition min-w-0">
+            <div class="flex items-start justify-between gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 leading-tight">Published Live</span>
+                <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs shrink-0">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
             </div>
-            <div class="mt-3">
-                <span class="text-2xl sm:text-3xl font-black text-emerald-600 tracking-tight">{{ number_format($publishedListings) }}</span>
-                <div class="flex items-center gap-1 text-[11px] text-emerald-700 font-semibold mt-1">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <div class="mt-4">
+                <span class="text-2xl sm:text-3xl font-black text-emerald-600 tracking-tight block">{{ number_format($publishedListings) }}</span>
+                <div class="flex items-center gap-1.5 text-xs text-emerald-700 font-semibold mt-1.5 truncate">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
                     <span>Live on PlaceX</span>
                 </div>
             </div>
         </div>
 
         <!-- KPI 3: Pending Approval -->
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-amber-200/80 flex flex-col justify-between hover:border-amber-300 hover:shadow-md transition">
-            <div class="flex items-center justify-between text-amber-600">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-800">Pending Review</span>
-                <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xs">
+        <div class="bg-white p-5 rounded-2xl shadow-xs border border-amber-200/90 flex flex-col justify-between hover:border-amber-300 hover:shadow-md transition min-w-0">
+            <div class="flex items-start justify-between gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-800 leading-tight">Pending Review</span>
+                <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-xs shrink-0">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
             </div>
-            <div class="mt-3">
-                <span class="text-2xl sm:text-3xl font-black {{ $pendingApproval > 0 ? 'text-amber-600' : 'text-slate-900' }} tracking-tight">{{ number_format($pendingApproval) }}</span>
-                <div class="flex items-center gap-1 text-[11px] {{ $pendingApproval > 0 ? 'text-amber-700 font-bold' : 'text-slate-400' }} mt-1">
-                    <i class="fa-regular fa-clock text-[10px]"></i>
+            <div class="mt-4">
+                <span class="text-2xl sm:text-3xl font-black {{ $pendingApproval > 0 ? 'text-amber-600' : 'text-slate-900' }} tracking-tight block">{{ number_format($pendingApproval) }}</span>
+                <div class="flex items-center gap-1.5 text-xs {{ $pendingApproval > 0 ? 'text-amber-700 font-bold' : 'text-slate-400' }} mt-1.5 truncate">
+                    <i class="fa-regular fa-clock text-[11px] shrink-0"></i>
                     <span>Moderation queue</span>
                 </div>
             </div>
         </div>
 
         <!-- KPI 4: Total Users -->
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-blue-200/80 flex flex-col justify-between hover:border-blue-300 hover:shadow-md transition">
-            <div class="flex items-center justify-between text-blue-600">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-blue-800">Total Users</span>
-                <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs">
+        <div class="bg-white p-5 rounded-2xl shadow-xs border border-blue-200/90 flex flex-col justify-between hover:border-blue-300 hover:shadow-md transition min-w-0">
+            <div class="flex items-start justify-between gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-800 leading-tight">Total Users</span>
+                <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs shrink-0">
                     <i class="fa-solid fa-users"></i>
                 </div>
             </div>
-            <div class="mt-3">
-                <span class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">{{ number_format($totalUsers) }}</span>
-                <div class="flex items-center gap-1 text-[11px] text-blue-600 font-medium mt-1">
-                    <i class="fa-solid fa-user-check text-[10px]"></i>
+            <div class="mt-4">
+                <span class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight block">{{ number_format($totalUsers) }}</span>
+                <div class="flex items-center gap-1.5 text-xs text-blue-600 font-medium mt-1.5 truncate">
+                    <i class="fa-solid fa-user-check text-[11px] shrink-0"></i>
                     <span>Registered users</span>
                 </div>
             </div>
         </div>
 
         <!-- KPI 5: Active Sellers -->
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-purple-200/80 flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition">
-            <div class="flex items-center justify-between text-purple-600">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-purple-800">Active Sellers</span>
-                <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center text-xs">
+        <div class="bg-white p-5 rounded-2xl shadow-xs border border-purple-200/90 flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition min-w-0">
+            <div class="flex items-start justify-between gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-800 leading-tight">Active Sellers</span>
+                <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center text-xs shrink-0">
                     <i class="fa-solid fa-store"></i>
                 </div>
             </div>
-            <div class="mt-3">
-                <span class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">{{ number_format($activeSellers) }}</span>
-                <div class="flex items-center gap-1 text-[11px] text-purple-600 font-medium mt-1">
-                    <i class="fa-solid fa-shop text-[10px]"></i>
+            <div class="mt-4">
+                <span class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight block">{{ number_format($activeSellers) }}</span>
+                <div class="flex items-center gap-1.5 text-xs text-purple-600 font-medium mt-1.5 truncate">
+                    <i class="fa-solid fa-shop text-[11px] shrink-0"></i>
                     <span>Verified posters</span>
                 </div>
             </div>
         </div>
 
         <!-- KPI 6: Total Enquiries -->
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-rose-200/80 flex flex-col justify-between hover:border-rose-300 hover:shadow-md transition">
-            <div class="flex items-center justify-between text-rose-600">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-rose-800">Total Enquiries</span>
-                <div class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center text-xs">
+        <div class="bg-white p-5 rounded-2xl shadow-xs border border-rose-200/90 flex flex-col justify-between hover:border-rose-300 hover:shadow-md transition min-w-0">
+            <div class="flex items-start justify-between gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-rose-800 leading-tight">Total Enquiries</span>
+                <div class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center text-xs shrink-0">
                     <i class="fa-solid fa-envelope-open-text"></i>
                 </div>
             </div>
-            <div class="mt-3">
-                <span class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">{{ number_format($totalEnquiries) }}</span>
-                <div class="flex items-center gap-1 text-[11px] text-slate-400 mt-1">
-                    <i class="fa-solid fa-comments text-[10px]"></i>
+            <div class="mt-4">
+                <span class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight block">{{ number_format($totalEnquiries) }}</span>
+                <div class="flex items-center gap-1.5 text-xs text-slate-400 mt-1.5 truncate">
+                    <i class="fa-solid fa-comments text-[11px] shrink-0"></i>
                     <span>Customer reports</span>
                 </div>
             </div>
