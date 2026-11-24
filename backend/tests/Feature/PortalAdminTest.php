@@ -23,7 +23,7 @@ class PortalAdminTest extends TestCase
             $response = $this->actingAs($manager)->get('/portal-admin/dashboard');
             $response->assertStatus(200);
             $response->assertSee('PlaceX Marketplace CMS');
-            $response->assertSee('Frontend Marketplace & Content Management');
+            $response->assertSee('Marketplace &amp; Content Management', false);
         } else {
             $this->assertTrue(true);
         }

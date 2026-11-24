@@ -18,7 +18,7 @@
                     </span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-tight">
-                    Frontend Marketplace &amp; Content Management
+                    Marketplace &amp; Content Management
                 </h1>
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
                     Welcome back, <strong class="text-white">{{ auth()->user()->name ?? 'Administrator' }}</strong>. Curate, publish, and inspect listings across Pakistan synced live with the storefront.
