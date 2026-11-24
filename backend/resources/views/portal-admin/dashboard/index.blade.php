@@ -64,8 +64,8 @@
         </div>
     </div>
 
-    <!-- 2. SIX MODERN KPI STATISTIC CARDS (Real Database Records) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 w-full">
+    <!-- 2. FOUR CORE KPI STATISTIC CARDS (Real Database Records) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
         
         <!-- KPI 1: Total Listings -->
         <div class="bg-white p-5 rounded-2xl shadow-xs border border-slate-200/90 flex flex-col justify-between hover:border-slate-300 hover:shadow-md transition-all group min-w-0">
@@ -118,41 +118,7 @@
             </div>
         </div>
 
-        <!-- KPI 4: Total Users -->
-        <div class="bg-white p-5 rounded-2xl shadow-xs border border-blue-200/90 flex flex-col justify-between hover:border-blue-300 hover:shadow-md transition-all group min-w-0">
-            <div class="flex items-start justify-between gap-2">
-                <span class="text-xs font-bold uppercase tracking-wider text-blue-800 leading-tight">Total Users</span>
-                <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-sm shrink-0 group-hover:bg-blue-100 transition">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-            </div>
-            <div class="mt-4">
-                <span class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight block">{{ number_format($totalUsers) }}</span>
-                <div class="flex items-center gap-1.5 text-xs text-blue-600 font-medium mt-1.5 truncate">
-                    <i class="fa-solid fa-user-check text-[11px] shrink-0"></i>
-                    <span>Registered accounts</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- KPI 5: Active Sellers -->
-        <div class="bg-white p-5 rounded-2xl shadow-xs border border-purple-200/90 flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all group min-w-0">
-            <div class="flex items-start justify-between gap-2">
-                <span class="text-xs font-bold uppercase tracking-wider text-purple-800 leading-tight">Active Sellers</span>
-                <div class="w-9 h-9 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-sm shrink-0 group-hover:bg-purple-100 transition">
-                    <i class="fa-solid fa-store"></i>
-                </div>
-            </div>
-            <div class="mt-4">
-                <span class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight block">{{ number_format($activeSellers) }}</span>
-                <div class="flex items-center gap-1.5 text-xs text-purple-600 font-medium mt-1.5 truncate">
-                    <i class="fa-solid fa-shop text-[11px] shrink-0"></i>
-                    <span>Merchant &amp; verified posters</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- KPI 6: Total Enquiries -->
+        <!-- KPI 4: Total Enquiries -->
         <div class="bg-white p-5 rounded-2xl shadow-xs border border-rose-200/90 flex flex-col justify-between hover:border-rose-300 hover:shadow-md transition-all group min-w-0">
             <div class="flex items-start justify-between gap-2">
                 <span class="text-xs font-bold uppercase tracking-wider text-rose-800 leading-tight">Total Enquiries</span>
