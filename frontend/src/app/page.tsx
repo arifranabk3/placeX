@@ -41,20 +41,13 @@ export default function HomePage() {
   return (
     <>
       <div className="hero-wrap">
-        <header className="site-header container">
+        <header className="site-header">
           <Link className="brand" href="/">
             <span>
               Place<span className="brand-x">X</span>
             </span>
             <small>JOBS · PROPERTY · CLASSIFIEDS</small>
           </Link>
-          <button 
-            className="mobile-menu" 
-            aria-label="Toggle navigation"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
-          </button>
           <nav className={`main-nav ${mobileMenuOpen ? 'open' : ''}`} suppressHydrationWarning>
             <Link className="active" href="/">Home</Link>
             <Link href="/jobs">Jobs</Link>
@@ -86,6 +79,13 @@ export default function HomePage() {
             >
               + Post Free Ad
             </a>
+            <button 
+              className="mobile-menu" 
+              aria-label="Toggle navigation"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+            </button>
           </div>
         </header>
 

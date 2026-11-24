@@ -10,7 +10,22 @@ a{text-decoration:none;color:inherit}
 button,input,select{font:inherit}
 .container{width:min(var(--container),calc(100% - 36px));margin-inline:auto}
 .hero-wrap{background:linear-gradient(90deg,rgba(2,18,32,.96),rgba(4,26,45,.66) 55%,rgba(3,21,36,.68)),url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90") center 43%/cover no-repeat;color:#fff;padding-bottom:0}
-.site-header{height:50px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(3,23,39,.92);border:1px solid rgba(255,255,255,.08);border-top:0;padding:0 14px;position:relative;z-index:10}
+.site-header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(3, 23, 39, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0 max(16px, env(safe-area-inset-right, 16px)) 0 max(16px, env(safe-area-inset-left, 16px));
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
+}
 .brand{display:flex;flex-direction:column;line-height:1;color:#fff;flex-shrink:0}
 .brand>span{font-size:23px;font-weight:900;letter-spacing:-1.1px}
 .brand-x{color:var(--orange)}
@@ -125,11 +140,21 @@ button,input,select{font:inherit}
   .card-image{height:105px}
 }
 @media(max-width:850px){
-  .site-header{height:58px;position:relative}
+  .site-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 16px !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-radius: 0 !important;
+    height: 60px;
+    position: relative;
+    box-sizing: border-box !important;
+  }
   .mobile-menu{
     display:grid!important;
     place-items:center!important;
-    order:3;
     font-size:18px;
     width:36px;
     height:36px;
@@ -138,8 +163,15 @@ button,input,select{font:inherit}
     border:1px solid rgba(255,255,255,0.15)!important;
     color:#ffffff!important;
     cursor:pointer;
+    flex-shrink:0;
   }
-  .header-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+  .header-actions{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-shrink:0;
+  }
   .menu-square{display:none}
   .main-nav{
     display:none;

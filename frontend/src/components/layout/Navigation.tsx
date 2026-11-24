@@ -42,13 +42,6 @@ export function Header({ activeTab }: HeaderProps) {
         </span>
         <small>JOBS · PROPERTY · CLASSIFIEDS</small>
       </Link>
-      <button 
-        className="mobile-menu" 
-        aria-label="Toggle navigation"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      >
-        <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
-      </button>
       <nav className={`main-nav ${mobileMenuOpen ? 'open' : ''}`} suppressHydrationWarning>
         <Link className={isTabActive('home') ? 'active' : ''} href="/">Home</Link>
         <Link className={isTabActive('jobs') ? 'active' : ''} href="/jobs">Jobs</Link>
@@ -72,6 +65,13 @@ export function Header({ activeTab }: HeaderProps) {
         >
           + Post Free Ad
         </a>
+        <button 
+          className="mobile-menu" 
+          aria-label="Toggle navigation"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+        </button>
       </div>
     </header>
   );
