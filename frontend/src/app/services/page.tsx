@@ -109,7 +109,7 @@ const ALL_SERVICES: ServiceItem[] = [
     rating: 4.9,
     reviewsCount: 98,
     verified: true,
-    image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=900&q=85',
+    image: 'https://images.unsplash.com/photo-1508873696983-2df57046475a?auto=format&fit=crop&w=900&q=85',
   },
 ];
 
@@ -141,31 +141,22 @@ export default function ServicesPage() {
       <section className="inner-hero">
         <div className="container">
           <div className="breadcrumb">
-            <Link href="/">Home</Link> / <span>Services</span>
+            <Link href="/">Home</Link> / Services
           </div>
           <h1>Explore Professional Services</h1>
           <p>
             Connect with verified service providers, technicians, creative experts, and corporate professionals.
           </p>
-        </div>
-      </section>
-
-      <section className="filters-strip">
-        <div className="container filters-inner">
-          <div className="filter-group">
+          <form className="inner-search" onSubmit={(e) => e.preventDefault()}>
             <input
               type="search"
-              placeholder="Search service, company or keyword..."
+              placeholder="Search service, company or keyword (e.g. AC Repair, Cleaning)..."
               value={searchKeyword}
               onChange={(e) => setSearchKeyword(e.target.value)}
-              className="filter-input"
             />
-          </div>
-          <div className="filter-group">
             <select
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
-              className="filter-select"
             >
               <option value="">All Cities</option>
               <option value="Islamabad">Islamabad</option>
@@ -174,28 +165,41 @@ export default function ServicesPage() {
               <option value="Karachi">Karachi</option>
               <option value="Faisalabad">Faisalabad</option>
             </select>
-          </div>
-          <div className="filter-group">
-            <select
-              value={selectedType}
-              onChange={(e) => setSelectedType(e.target.value)}
-              className="filter-select"
-            >
-              <option value="">All Categories</option>
-              <option value="Home Maintenance">Home Maintenance</option>
-              <option value="Design & Construction">Design &amp; Construction</option>
-              <option value="Cleaning & Care">Cleaning &amp; Care</option>
-              <option value="IT & Digital Services">IT &amp; Digital Services</option>
-              <option value="Legal & Finance">Legal &amp; Finance</option>
-            </select>
-          </div>
+            <button type="submit">
+              <i className="fa-solid fa-magnifying-glass"></i> Search
+            </button>
+          </form>
         </div>
       </section>
 
       <main className="listing-main">
         <div className="container">
           <div className="section-heading">
-            <h2>Featured Services ({filteredServices.length})</h2>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+              <h2>Featured Services ({filteredServices.length})</h2>
+              <div className="category-pills" style={{ display: 'inline-flex', gap: '6px', marginLeft: '12px' }}>
+                {['All', 'Home Maintenance', 'Design & Construction', 'Cleaning & Care', 'IT & Digital Services', 'Legal & Finance'].map((type) => (
+                  <button
+                    key={type}
+                    type="button"
+                    onClick={() => setSelectedType(type === 'All' ? '' : type)}
+                    style={{
+                      border: '0',
+                      borderRadius: '20px',
+                      padding: '5px 12px',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      background: (type === 'All' && !selectedType) || selectedType === type ? 'var(--orange)' : '#f1f5f9',
+                      color: (type === 'All' && !selectedType) || selectedType === type ? '#fff' : '#475569',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
+            </div>
             <Link href="/post?category=services">+ Offer a Service</Link>
           </div>
 
@@ -215,11 +219,11 @@ export default function ServicesPage() {
                   </div>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
-                  <div className="card-footer">
-                    <span>
+                  <div className="card-footer" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', paddingTop: '8px', borderTop: '1px solid #f1f5f9' }}>
+                    <span style={{ fontSize: '11px', color: '#64748b', display: 'flex', alignItems: 'center', gap: '4px' }}>
                       <i className="fa-solid fa-location-dot"></i> {service.location}
                     </span>
-                    <span style={{ color: 'var(--orange)', fontWeight: 700 }}>
+                    <span style={{ color: 'var(--orange)', fontWeight: 700, fontSize: '11px' }}>
                       {service.provider}
                     </span>
                   </div>
